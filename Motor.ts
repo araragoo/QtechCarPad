@@ -60,6 +60,6 @@ namespace Motor {
     }
 
     export function Motor(channel: number,voltage: number): void {
-        driveMotor(channel, voltage) {
+        driveMotor(channel, voltage);
     }
 } 
