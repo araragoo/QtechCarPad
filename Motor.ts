@@ -59,7 +59,7 @@ namespace Motor {
         i2cwrite(channel,CTR_ADR, value);
     }
 
-    export function Motor(channel: number,voltage: number): void {
+    export function drive(channel: number,voltage: number): void {
         driveMotor(channel, voltage);
     }
 } 
