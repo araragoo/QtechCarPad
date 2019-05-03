@@ -3,22 +3,22 @@ namespace Motor {
 //namespace モータ {
 
     // I2Cアドレス
-    const DRV_ADR1   0x64  // DRV8830のI2Cアドレス A1 = open,  A0 = open
-    const DRV_ADR2   0x65  // DRV8830のI2Cアドレス A1 = open,  A0 = 1
-    const CTR_ADR   0x00  // CONTROLレジスタのサブアドレス
-    const FLT_ADR   0x01  // FAULTレジスタのアドレス
+    const DRV_ADR1 = 0x64  // DRV8830のI2Cアドレス A1 = open,  A0 = open
+    const DRV_ADR2 = 0x65  // DRV8830のI2Cアドレス A1 = open,  A0 = 1
+    const CTR_ADR  = 0x00  // CONTROLレジスタのサブアドレス
+    const FLT_ADR  = 0x01  // FAULTレジスタのアドレス
 
     // ブリッジ制御
-    const M_STANBY  B00   // スタンバイ   
-    const M_REVERSE B01   // 逆転
-    const M_NORMAL  B10   // 正転
-    const M_BRAKE   B11   // ブレーキ
+    const M_STANBY  = B00   // スタンバイ   
+    const M_REVERSE = B01   // 逆転
+    const M_NORMAL  = B10   // 正転
+    const M_BRAKE   = B11   // ブレーキ
 
-    const DRV_MIN     0 //  0V
-    const DRV_MAX   100 //  3Vmax
-    const DRV_MIN_B   0 //  0lsb
-    const DRV_MAX_B  37 //  6-37lsb : 0.48-5.06V   3Vmax -> (3.0-0.48)/(5.06-0.48)*(63-6)+6 = 37lsb
-    const DRV_MAXMAX_B      0x3F
+    const DRV_MIN      =    0 //  0V
+    const DRV_MAX      =  100 //  3Vmax
+    const DRV_MIN_B    =    0 //  0lsb
+    const DRV_MAX_B    =   37 //  6-37lsb : 0.48-5.06V   3Vmax -> (3.0-0.48)/(5.06-0.48)*(63-6)+6 = 37lsb
+    const DRV_MAXMAX_B = 0x3F
 
     // サーボ
     const PCA9685_ADDRESS = 0x40
@@ -26,20 +26,20 @@ namespace Motor {
     const PRESCALE = 0xFE
     const LED0_ON_L = 0x06
 
-    const PWM_FREQUENCY 50        //50Hz 20ms
-    const PWM_MAX 2400*4096/20000 //2.4ms
-    const PWM_MIN  500*4096/20000 //0.5ms
-    const PWM_MAX_B    4095       //4095lsb
-    const PWM_MIN_B    0          //   0lsb
+    const PWM_FREQUENCY = 50        //50Hz 20ms
+    const PWM_MAX       = 2400*4096/20000 //2.4ms
+    const PWM_MIN       = 500*4096/20000 //0.5ms
+    const PWM_MAX_B     = 4095       //4095lsb
+    const PWM_MIN_B     = 0          //   0lsb
 
-    const DEGREE_MIN  -90 //-90deg.
-    const DEGREE_MAX   90 // 90deg.
+    const DEGREE_MIN = -90 //-90deg.
+    const DEGREE_MAX =  90 // 90deg.
 
     let initialized = false
 
 
-    const LED_MIN   0 //  0V
-    const LED_MAX 100 //3.3V
+    const LED_MIN =   0 //  0V
+    const LED_MAX = 100 //3.3V
 
     function i2cwrite(addr: number, reg: number, value: number): void {
         let buf = pins.createBuffer(2)
