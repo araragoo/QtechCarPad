@@ -37,8 +37,8 @@ namespace モータ {
     function driveMotor(channel: number, voltage: number): void {
         let adr;
         switch (channel) {
-            case 1: adr  = DRV_ADR1; break;
-            case 2: adr  = DRV_ADR2; break;
+            case 0: adr  = DRV_ADR1; break;
+            case 1: adr  = DRV_ADR2; break;
             default : return;
         }
 
@@ -64,7 +64,7 @@ namespace モータ {
     // blockId=setMotor block="drive channel|%channel|voltage %voltage"
     //% blockId=setMotor block="回転 右／左|%channel|電圧 %voltage"
     //% weight=85
-    //% channel.min=1 channel.max=2
+    //% channel.min=0 channel.max=1
     //% voltage.min=-100 voltage.max=100
     export function drive(channel: number,voltage: number): void {
         driveMotor(channel, voltage);
