@@ -1,6 +1,6 @@
 //% weight=5 color=#0fbc11 icon="\uf112"
-//namespace Motor {
-namespace モータ {
+namespace Motor {
+//namespace モータ {
 
     // I2Cアドレス
     const DRV_ADR1   0x64  // DRV8830のI2Cアドレス A1 = open,  A0 = open
@@ -82,8 +82,8 @@ namespace モータ {
         i2cwrite(channel,CTR_ADR, val);
     }
 
-    // blockId=setMotor block="drive channel|%channel|voltage %voltage"
-    //% blockId=setMotor block="モータ 右(0)/左(1)|%channel|電圧(-100～100) %voltage"
+    // blockId=setMotor block="モータ 右(0)/左(1)|%channel|電圧(-100～100) %voltage"
+    //% blockId=setMotor block="drive channel|%channel|voltage %voltage"
     //% weight=85
     //% channel.min=0 channel.max=1
     //% voltage.min=-100 voltage.max=100
@@ -131,7 +131,8 @@ namespace モータ {
         pins.i2cWriteBuffer(PCA9685_ADDRESS, buf);
     }
 
-    //% blockId=setServo block="サーボ 右靴(0)/左靴(1)/右足(2)/左足(3)|%channel|角度 %degree"
+    // blockId=setServo block="サーボ 右靴(0)/左靴(1)/右足(2)/左足(3)|%channel|角度 %degree"
+    //% blockId=setServo block="Servo 右靴(0)/左靴(1)/右足(2)/左足(3)|%channel|角度 %degree"
     //% weight=85
     //% channel.min=0 channel.max=3
     //% degree.min=-45 degree.max=45
@@ -144,6 +145,7 @@ namespace モータ {
         setPWM(channel+4, 0, val);
     }
 
+    // blockId=setLED block="LED 赤(0)/黄(1)/緑(2)/青(3)|%channel|電圧(-100～100) %voltage"
     //% blockId=setLED block="LED 赤(0)/黄(1)/緑(2)/青(3)|%channel|電圧(-100～100) %voltage"
     //% weight=85
     //% channel.min=0 channel.max=3
