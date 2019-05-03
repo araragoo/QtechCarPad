@@ -19,20 +19,20 @@ namespace Motor {
     const DRV_MAXMAX_B      0x3F
 
 
-    function i2cwrite(addr: number, reg: number, value: number) {
+    function i2cwrite(addr: number, reg: number, value: number): void {
         let buf = pins.createBuffer(2)
         buf[0] = reg
         buf[1] = value
         pins.i2cWriteBuffer(addr, buf)
     }
 
-    function i2cread(addr: number, reg: number) {
+    function i2cread(addr: number, reg: number): void {
         pins.i2cWriteNumber(addr, reg, NumberFormat.UInt8BE);
         let val = pins.i2cReadNumber(addr, NumberFormat.UInt8BE);
         return val;
     }
 
-    function driveMotor(channel: number, voltage: number) {
+    function driveMotor(channel: number, voltage: number): void {
         let adr;
         switch (channel) {
             case 1: adr  = DRV_ADR1; break;
