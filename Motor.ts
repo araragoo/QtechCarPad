@@ -1,4 +1,4 @@
-//% weight=5 color=#0fbc11 icon="\uf113"
+//% weight=5 color=#0fbc11 icon="\uf112"
 namespace Motor {
 
     // I2Cアドレス
