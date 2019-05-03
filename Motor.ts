@@ -60,10 +60,10 @@ namespace Motor {
         i2cwrite(channel,CTR_ADR, value);
     }
 
-    //% blockId=setServo block="MMotor channel|%channel|voltage %voltage"
+    //% blockId=setMotor block="Motor channel|%channel|voltage %voltage"
     //% weight=85
     //% voltage.min=-100 voltage.max=100
-    export function drive(channel: number,voltage: number): void {
+    export function motor(channel: number,voltage: number): void {
         driveMotor(channel, voltage);
     }
 } 
