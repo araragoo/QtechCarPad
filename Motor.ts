@@ -62,6 +62,7 @@ namespace Motor {
 
     //% blockId=setMotor block="drive channel|%channel|voltage %voltage"
     //% weight=85
+    //% channel.min=1 channel.max=2
     //% voltage.min=-100 voltage.max=100
     export function drive(channel: number,voltage: number): void {
         driveMotor(channel, voltage);
