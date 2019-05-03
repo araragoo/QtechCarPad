@@ -60,7 +60,8 @@ namespace Motor {
         i2cwrite(channel,CTR_ADR, value);
     }
 
-    //% blockId=setMotor block="drive channel|%channel|voltage %voltage"
+    // blockId=setMotor block="drive channel|%channel|voltage %voltage"
+    //% blockId=setモータ block="回転 右／左|%channel|電圧 %voltage"
     //% weight=85
     //% channel.min=1 channel.max=2
     //% voltage.min=-100 voltage.max=100
