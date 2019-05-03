@@ -9,10 +9,10 @@ namespace Motor {
     const FLT_ADR  = 0x01  // FAULTレジスタのアドレス
 
     // ブリッジ制御
-    const M_STANBY  = B00   // スタンバイ   
-    const M_REVERSE = B01   // 逆転
-    const M_NORMAL  = B10   // 正転
-    const M_BRAKE   = B11   // ブレーキ
+    const M_STANBY  = 0 //B00   // スタンバイ   
+    const M_REVERSE = 1 //B01   // 逆転
+    const M_NORMAL  = 2 //B10   // 正転
+    const M_BRAKE   = 3 //B11   // ブレーキ
 
     const DRV_MIN      =    0 //  0V
     const DRV_MAX      =  100 //  3Vmax
@@ -26,11 +26,11 @@ namespace Motor {
     const PRESCALE = 0xFE
     const LED0_ON_L = 0x06
 
-    const PWM_FREQUENCY = 50        //50Hz 20ms
+    const PWM_FREQUENCY = 50              //50Hz 20ms
     const PWM_MAX       = 2400*4096/20000 //2.4ms
-    const PWM_MIN       = 500*4096/20000 //0.5ms
-    const PWM_MAX_B     = 4095       //4095lsb
-    const PWM_MIN_B     = 0          //   0lsb
+    const PWM_MIN       = 500*4096/20000  //0.5ms
+    const PWM_MAX_B     = 4095            //4095lsb
+    const PWM_MIN_B     = 0               //   0lsb
 
     const DEGREE_MIN = -90 //-90deg.
     const DEGREE_MAX =  90 // 90deg.
