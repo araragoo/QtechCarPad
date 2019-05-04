@@ -90,7 +90,7 @@ namespace Motor {
         pins.i2cWriteBuffer(PCA9685_ADDRESS, buf);
     }
 
-    //% blockId=setServo block="Servo channel|%channel|degree %degree"
+    //% blockId=setServo block="Servo channel|%channel|degree|%degree"
     //% weight=85
     //% channel.min=0 channel.max=3
     //% degree.min=-45 degree.max=45
@@ -99,7 +99,7 @@ namespace Motor {
             initPCA9685();
         }
         let val = degree;
-        val = (val-DEGREE_MIN) * (PWM_MAX-PWM_MIN) / (DEGREE_MAX-DEGREE_MIN);
+//        val = (val-DEGREE_MIN) * (PWM_MAX-PWM_MIN) / (DEGREE_MAX-DEGREE_MIN);
         setPWM(channel+4, 0, val);
     }
 
