@@ -85,7 +85,7 @@ namespace Motor {
     //% channel.min=0 channel.max=1
     //% voltage.min=-100 voltage.max=100
     export function Motor(channel: number,voltage: number): void {
-//        driveMotor(channel, voltage);
+        driveMotor(channel, voltage);
     }
 
     function initPCA9685(): void {
