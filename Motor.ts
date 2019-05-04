@@ -53,7 +53,7 @@ namespace Motor {
 
     function driveMotor(channel: number, voltage: number): void {
         let adr;
-/*        switch (channel) {
+        switch (channel) {
             case 0: adr = DRV_ADR1; break;
             case 1: adr = DRV_ADR2; break;
             default : return;
@@ -68,7 +68,7 @@ namespace Motor {
             ctr = M_REVERSE;
             voltage = -voltage;
         }
-
+/*
         let val = voltage;
         if(val > DRV_MAX) val = DRV_MAX;
         if(val < DRV_MIN) val = DRV_MIN;
