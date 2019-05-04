@@ -53,7 +53,7 @@ namespace Motor {
         let val = pins.i2cReadNumber(addr, NumberFormat.UInt8BE);
         return val;
     }
-
+/*
     function driveMotor(channel: number, voltage: number): void {
         let adr;
         switch (channel) {
@@ -90,7 +90,7 @@ namespace Motor {
     export function drive(channel: number,voltage: number): void {
         driveMotor(channel, voltage);
     }
-
+*/
     function initPCA9685(): void {
         i2cwrite(PCA9685_ADDRESS, MODE1, 0x00)
         setFreq(50);
