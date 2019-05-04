@@ -68,7 +68,7 @@ namespace Motor {
             ctr = M_REVERSE;
             voltage = -voltage;
         }
-/*
+
         let val = voltage;
         if(val > DRV_MAX) val = DRV_MAX;
         if(val < DRV_MIN) val = DRV_MIN;
@@ -77,7 +77,7 @@ namespace Motor {
         val = ctr + (val << 2);
 
         i2cwrite(channel,CTR_ADR, val);
-*/
+
     }
 
     //% blockId=setMotor block="Motor Right:0 Left:1 %channel|BWD<>FWD:-100<>100 %voltage"
