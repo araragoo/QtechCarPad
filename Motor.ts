@@ -33,6 +33,8 @@ namespace Motor {
 
     const DEGREE_MIN = -90 //-90deg.
     const DEGREE_MAX =  90 // 90deg.
+    const LED_MIN    =   0 //  0V
+    const LED_MAX    = 100 //3.3V
 
     let initialized = false
 
@@ -114,7 +116,7 @@ namespace Motor {
             initPCA9685();
         }
         let val = voltage;
-//        val = (val-LED_MIN) * (PWM_MAX-PWM_MIN) / (LED_MAX-LED_MIN);
+        val = (val-LED_MIN) * (PWM_MAX-PWM_MIN) / (LED_MAX-LED_MIN);
         setPwm(channel, 0, val);
     }
 } 
