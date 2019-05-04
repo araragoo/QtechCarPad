@@ -1,32 +1,20 @@
 //% weight=5 color=#0fbc11 icon="\uf112"
 namespace Motor {
+
+    // ÉTÅ[É{
     const PCA9685_ADDRESS = 0x40
     const MODE1 = 0x00
-    const MODE2 = 0x01
-    const SUBADR1 = 0x02
-    const SUBADR2 = 0x03
-    const SUBADR3 = 0x04
     const PRESCALE = 0xFE
     const LED0_ON_L = 0x06
-    const LED0_ON_H = 0x07
-    const LED0_OFF_L = 0x08
-    const LED0_OFF_H = 0x09
-    const ALL_LED_ON_L = 0xFA
-    const ALL_LED_ON_H = 0xFB
-    const ALL_LED_OFF_L = 0xFC
-    const ALL_LED_OFF_H = 0xFD
 
-    const STP_CHA_L = 2047
-    const STP_CHA_H = 4095
+    const PWM_FREQUENCY = 50              //50Hz 20ms
+    const PWM_MAX       = 2400*4096/20000 //2.4ms
+    const PWM_MIN       = 500*4096/20000  //0.5ms
+    const PWM_MAX_B     = 4095            //4095lsb
+    const PWM_MIN_B     = 0               //   0lsb
 
-    const STP_CHB_L = 1
-    const STP_CHB_H = 2047
-
-    const STP_CHC_L = 1023
-    const STP_CHC_H = 3071
-
-    const STP_CHD_L = 3071
-    const STP_CHD_H = 1023
+    const DEGREE_MIN = -90 //-90deg.
+    const DEGREE_MAX =  90 // 90deg.
 
     let initialized = false
 
@@ -82,36 +70,27 @@ namespace Motor {
         pins.i2cWriteBuffer(PCA9685_ADDRESS, buf);
     }
 
-	/**
-	 * Servo Execute
-	 * @param degree [0-180] degree of servo; eg: 90, 0, 180
-	*/
     //% blockId=setServo block="Servo channel|%channel|degree %degree"
     //% weight=85
     //% degree.min=0 degree.max=180
     export function Servo(channel: number,degree: number): void {
-		if (!initialized) {
+        if (!initialized) {
             initPCA9685();
         }
-		// 50hz: 20,000 us
-        let v_us = (degree * 1800 / 180 + 600); // 0.6 ~ 2.4
-        let value = v_us * 4096 / 20000;
-        setPwm(channel, 0, value);
+        let val = degree;
+        val = (val-DEGREE_MIN) * (PWM_MAX-PWM_MIN) / (DEGREE_MAX-DEGREE_MIN);
+        setPWM(channel+4, 0, val);
     }
-	
-	/**
-	 * Servo Execute
-	 * @param pulse [500-2500] pulse of servo; eg: 1500, 500, 2500
-	*/
-    //% blockId=setServoPulse block="Servo channel|%channel|pulse %pulse"
+
+    //% blockId=setServoPulse block="Servo channel|%channel|voltage %voltage"
     //% weight=85
-    //% pulse.min=500 pulse.max=2500
-    export function ServoPulse(channel: number,pulse: number): void {
-		if (!initialized) {
+    //% voltage.min=0 voltage.max=100
+    export function Led(channel: number,voltage: number): void {
+        if (!initialized) {
             initPCA9685();
         }
-		// 50hz: 20,000 us
-        let value = pulse * 4096 / 20000;
-        setPwm(channel, 0, value);
+        let val = voltage;
+        val = (val-LED_MIN) * (PWM_MAX-PWM_MIN) / (LED_MAX-LED_MIN);
+        setPwm(channel, 0, val);
     }
 } 
