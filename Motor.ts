@@ -1,5 +1,5 @@
 //% weight=5 color=#0fbc11 icon="\uf112"
-namespace モータ {
+namespace Motor {
 
     // モータアドレス
     const DRV_ADR1 = 0x64  // DRV8830のI2Cアドレス A1 = open,  A0 = open
