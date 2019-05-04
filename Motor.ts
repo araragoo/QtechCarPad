@@ -102,12 +102,8 @@ namespace Motor {
         let value = v_us * 4096 / 20000;
         setPwm(channel, 0, value);
     }
-	
-	/**
-	 * Servo Execute
-	 * @param pulse [500-2500] pulse of servo; eg: 1500, 500, 2500
-	*/
-    //% blockId=setLED block="LED LEDê‘(0)/â©(1)/óŒ(2)/ê¬(3)|%channel|ìdà≥(0Å`100) %voltage"
+
+    //% blockId=setLED block="LED Red(0)/Yellow(1)/Green(2)/Blue(3)|%channel|voltage(0Å`100)|%voltage"
     //% weight=85
     //% channel.min=0 channel.max=3
     //% voltage.min=0 voltage.max=100
