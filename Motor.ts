@@ -87,15 +87,15 @@ namespace Motor {
 	 * Servo Execute
 	 * @param pulse [500-2500] pulse of servo; eg: 1500, 500, 2500
 	*/
-    //% blockId=setServoPulse block="Servo channel|%channel|pulse %pulse"
+    //% blockId=setServoPulse block="Servo channel|%channel|voltage %voltage"
     //% weight=85
-    //% pulse.min=500 pulse.max=2500
-    export function ServoPulse(channel: number,pulse: number): void {
-		if (!initialized) {
+    //% voltage.min=500 voltage.max=2500
+    export function ServoPulse(channel: number,voltage: voltage): void {
+        if (!initialized) {
             initPCA9685();
         }
 		// 50hz: 20,000 us
-        let value = pulse * 4096 / 20000;
+        let value = voltage * 4096 / 20000;
         setPwm(channel, 0, value);
     }
 } 
