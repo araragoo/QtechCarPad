@@ -1,4 +1,4 @@
 {
-	"Motor.LED|block": "LED 赤(0)/黄(1)/緑(2)/青(3)|%channel|電圧|%voltage"
+	"Motor.LED|block": "LED 赤:0 黄:1 緑:2 青:3|%channel|電圧:0～100|%voltage"
 
 }
