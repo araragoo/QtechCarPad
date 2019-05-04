@@ -51,6 +51,42 @@ namespace Motor {
         return val;
     }
 
+    function driveMotor(channel: number, voltage: number): void {
+        let adr;
+        switch (channel) {
+            case 0: adr = DRV_ADR1; break;
+            case 1: adr = DRV_ADR2; break;
+            default : return;
+        }
+
+        let ctr;
+        if (voltage == 0) {
+            ctr = M_STANBY;
+        } else if (voltage > 0) {
+            ctr = M_NORMAL;
+        } else {
+            ctr = M_REVERSE;
+            voltage = -voltage;
+        }
+
+        let val = voltage;
+        if(val > DRV_MAX) val = DRV_MAX;
+        if(val < DRV_MIN) val = DRV_MIN;
+        
+        val = (DRV_MAX_B - DRV_MIN_B)*(val - DRV_MIN) / (DRV_MAX - DRV_MIN) + DRV_MIN_B;
+        val = ctr + (val << 2);
+
+        i2cwrite(channel,CTR_ADR, val);
+    }
+
+    //% blockId=setMotor block="Motor Right:0 Left:1 %channel|BWD`FWD:-100`100 %voltage"
+    //% weight=85
+    //% channel.min=0 channel.max=1
+    //% voltage.min=-100 voltage.max=100
+    export function Motor(channel: number,voltage: number): void {
+        driveMotor(channel, voltage);
+    }
+
     function initPCA9685(): void {
         i2cwrite(PCA9685_ADDRESS, MODE1, 0x00)
         setFreq(50);
