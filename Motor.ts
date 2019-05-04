@@ -1,96 +1,48 @@
 //% weight=5 color=#0fbc11 icon="\uf112"
 namespace Motor {
-//namespace モータ {
-
-    // I2Cアドレス
-    const DRV_ADR1 = 0x64  // DRV8830のI2Cアドレス A1 = open,  A0 = open
-    const DRV_ADR2 = 0x65  // DRV8830のI2Cアドレス A1 = open,  A0 = 1
-    const CTR_ADR  = 0x00  // CONTROLレジスタのサブアドレス
-    const FLT_ADR  = 0x01  // FAULTレジスタのアドレス
-
-    // ブリッジ制御
-    const M_STANBY  = 0 //B00   // スタンバイ   
-    const M_REVERSE = 1 //B01   // 逆転
-    const M_NORMAL  = 2 //B10   // 正転
-    const M_BRAKE   = 3 //B11   // ブレーキ
-
-    const DRV_MIN      =    0 //  0V
-    const DRV_MAX      =  100 //  3Vmax
-    const DRV_MIN_B    =    0 //  0lsb
-    const DRV_MAX_B    =   37 //  6-37lsb : 0.48-5.06V   3Vmax -> (3.0-0.48)/(5.06-0.48)*(63-6)+6 = 37lsb
-    const DRV_MAXMAX_B = 0x3F
-
-    // サーボ
     const PCA9685_ADDRESS = 0x40
     const MODE1 = 0x00
+    const MODE2 = 0x01
+    const SUBADR1 = 0x02
+    const SUBADR2 = 0x03
+    const SUBADR3 = 0x04
     const PRESCALE = 0xFE
     const LED0_ON_L = 0x06
+    const LED0_ON_H = 0x07
+    const LED0_OFF_L = 0x08
+    const LED0_OFF_H = 0x09
+    const ALL_LED_ON_L = 0xFA
+    const ALL_LED_ON_H = 0xFB
+    const ALL_LED_OFF_L = 0xFC
+    const ALL_LED_OFF_H = 0xFD
 
-    const PWM_FREQUENCY = 50              //50Hz 20ms
-    const PWM_MAX       = 2400*4096/20000 //2.4ms
-    const PWM_MIN       = 500*4096/20000  //0.5ms
-    const PWM_MAX_B     = 4095            //4095lsb
-    const PWM_MIN_B     = 0               //   0lsb
+    const STP_CHA_L = 2047
+    const STP_CHA_H = 4095
 
-    const DEGREE_MIN = -90 //-90deg.
-    const DEGREE_MAX =  90 // 90deg.
+    const STP_CHB_L = 1
+    const STP_CHB_H = 2047
+
+    const STP_CHC_L = 1023
+    const STP_CHC_H = 3071
+
+    const STP_CHD_L = 3071
+    const STP_CHD_H = 1023
 
     let initialized = false
 
-
-    const LED_MIN =   0 //  0V
-    const LED_MAX = 100 //3.3V
-
-    function i2cwrite(addr: number, reg: number, value: number): void {
+    function i2cwrite(addr: number, reg: number, value: number) {
         let buf = pins.createBuffer(2)
         buf[0] = reg
         buf[1] = value
         pins.i2cWriteBuffer(addr, buf)
     }
 
-    function i2cread(addr: number, reg: number): void {
+    function i2cread(addr: number, reg: number) {
         pins.i2cWriteNumber(addr, reg, NumberFormat.UInt8BE);
         let val = pins.i2cReadNumber(addr, NumberFormat.UInt8BE);
         return val;
     }
-/*
-    function driveMotor(channel: number, voltage: number): void {
-        let adr;
-        switch (channel) {
-            case 0: adr = DRV_ADR1; break;
-            case 1: adr = DRV_ADR2; break;
-            default : return;
-        }
 
-        let ctr;
-        if (voltage == 0) {
-            ctr = M_STANBY;
-        } else if (voltage > 0) {
-            ctr = M_NORMAL;
-        } else {
-            ctr = M_REVERSE;
-            voltage = -voltage;
-        }
-
-        let val = voltage;
-        if(val > DRV_MAX) val = DRV_MAX;
-        if(val < DRV_MIN) val = DRV_MIN;
-        
-        val = (DRV_MAX_B - DRV_MIN_B)*(val - DRV_MIN) / (DRV_MAX - DRV_MIN) + DRV_MIN_B;
-        val = ctr + (val << 2);
-
-        i2cwrite(channel,CTR_ADR, val);
-    }
-
-    // blockId=setMotor block="モータ 右(0)/左(1)|%channel|電圧(-100～100) %voltage"
-    //% blockId=setMotor block="drive channel|%channel|voltage %voltage"
-    //% weight=85
-    //% channel.min=0 channel.max=1
-    //% voltage.min=-100 voltage.max=100
-    export function drive(channel: number,voltage: number): void {
-        driveMotor(channel, voltage);
-    }
-*/
     function initPCA9685(): void {
         i2cwrite(PCA9685_ADDRESS, MODE1, 0x00)
         setFreq(50);
@@ -103,7 +55,6 @@ namespace Motor {
 
     function setFreq(freq: number): void {
         // Constrain the frequency
-        freq *= 0.9;  // Correct for overshoot in the frequency setting (see issue #11).
         let prescaleval = 25000000;
         prescaleval /= 4096;
         prescaleval /= freq;
@@ -131,31 +82,36 @@ namespace Motor {
         pins.i2cWriteBuffer(PCA9685_ADDRESS, buf);
     }
 
-    // blockId=setServo block="サーボ 右靴(0)/左靴(1)/右足(2)/左足(3)|%channel|角度 %degree"
-    //% blockId=setServo block="Servo 右靴(0)/左靴(1)/右足(2)/左足(3)|%channel|角度 %degree"
+	/**
+	 * Servo Execute
+	 * @param degree [0-180] degree of servo; eg: 90, 0, 180
+	*/
+    //% blockId=setServo block="Servo channel|%channel|degree %degree"
     //% weight=85
-    //% channel.min=0 channel.max=3
-    //% degree.min=-45 degree.max=45
+    //% degree.min=0 degree.max=180
     export function Servo(channel: number,degree: number): void {
-        if (!initialized) {
+		if (!initialized) {
             initPCA9685();
         }
-        let val = degree;
-        val = (val-DEGREE_MIN) * (PWM_MAX-PWM_MIN) / (DEGREE_MAX-DEGREE_MIN);
-        setPWM(channel+4, 0, val);
+		// 50hz: 20,000 us
+        let v_us = (degree * 1800 / 180 + 600); // 0.6 ~ 2.4
+        let value = v_us * 4096 / 20000;
+        setPwm(channel, 0, value);
     }
-
-    // blockId=setLED block="LED 赤(0)/黄(1)/緑(2)/青(3)|%channel|電圧(-100～100) %voltage"
-    //% blockId=setLED block="LED 赤(0)/黄(1)/緑(2)/青(3)|%channel|電圧(-100～100) %voltage"
+	
+	/**
+	 * Servo Execute
+	 * @param pulse [500-2500] pulse of servo; eg: 1500, 500, 2500
+	*/
+    //% blockId=setServoPulse block="Servo channel|%channel|pulse %pulse"
     //% weight=85
-    //% channel.min=0 channel.max=3
-    //% voltage.min=0 voltage.max=100
-    export function LED(channel: number,voltage: number): void {
-        if (!initialized) {
+    //% pulse.min=500 pulse.max=2500
+    export function ServoPulse(channel: number,pulse: number): void {
+		if (!initialized) {
             initPCA9685();
         }
-        let val = voltage;
-        val = (val-LED_MIN) * (PWM_MAX-PWM_MIN) / (LED_MAX-LED_MIN);
-        setPwm(channel, 0, val);
+		// 50hz: 20,000 us
+        let value = pulse * 4096 / 20000;
+        setPwm(channel, 0, value);
     }
 } 
