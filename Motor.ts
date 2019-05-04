@@ -90,13 +90,13 @@ namespace Motor {
     //% blockId=setLED block="LED LEDê‘(0)/â©(1)/óŒ(2)/ê¬(3)|%channel|ìdà≥(0Å`100) %voltage"
     //% weight=85
     //% channel.min=0 channel.max=3
-    //% voltage.min=500 voltage.max=2500
+    //% voltage.min=0 voltage.max=100
     export function LED(channel: number,voltage: number): void {
         if (!initialized) {
             initPCA9685();
         }
-		// 50hz: 20,000 us
-        let value = voltage * 4096 / 20000;
-        setPwm(channel, 0, value);
+        let val = voltage;
+        val = (val-LED_MIN) * (PWM_MAX-PWM_MIN) / (LED_MAX-LED_MIN);
+        setPwm(channel, 0, val);
     }
 } 
