@@ -90,7 +90,7 @@ namespace Motor {
     //% blockId=setServoPulse block="Servo channel|%channel|voltage %voltage"
     //% weight=85
     //% voltage.min=500 voltage.max=2500
-    export function ServoPulse(channel: number,voltage: voltage): void {
+    export function ServoPulse(channel: number,voltage: number): void {
         if (!initialized) {
             initPCA9685();
         }
