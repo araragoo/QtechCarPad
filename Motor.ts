@@ -87,10 +87,10 @@ namespace Motor {
 	 * Servo Execute
 	 * @param pulse [500-2500] pulse of servo; eg: 1500, 500, 2500
 	*/
-    //% blockId=setServoPulse block="Servo channel|%channel|voltage %voltage"
+    //% blockId=setLED block="LED channel|%channel|voltage %voltage"
     //% weight=85
     //% voltage.min=500 voltage.max=2500
-    export function ServoPulse(channel: number,voltage: number): void {
+    export function LED(channel: number,voltage: number): void {
         if (!initialized) {
             initPCA9685();
         }
