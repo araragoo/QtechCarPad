@@ -63,6 +63,7 @@ namespace Motor {
 
     function setFreq(freq: number): void {
         // Constrain the frequency
+        freq *= 0.9;  // Correct for overshoot in the frequency setting (see issue #11).
         let prescaleval = 25000000;
         prescaleval /= 4096;
         prescaleval /= freq;
@@ -90,7 +91,7 @@ namespace Motor {
         pins.i2cWriteBuffer(PCA9685_ADDRESS, buf);
     }
 
-    //% blockId=setServo block="Servo channel|%channel|degree|%degree"
+    //% blockId=setServo block="Servo LowR:0 LowL:1 HighR:2 HighL:3 %channel|degree:-45Å`45 %degree"
     //% weight=85
     //% channel.min=0 channel.max=3
     //% degree.min=-45 degree.max=45
@@ -103,7 +104,7 @@ namespace Motor {
         setPwm(channel+4, 0, val);
     }
 
-    //% blockId=setLED block="LED Red:0 Yellow:1 Green:2 Blue:3|%channel|voltage:0Å`100|%voltage"
+    //% blockId=setLED block="LED Red:0 Yellow:1 Green:2 Blue:3 %channel|voltage:0Å`100 %voltage"
     //% weight=85
     //% channel.min=0 channel.max=3
     //% voltage.min=0 voltage.max=100

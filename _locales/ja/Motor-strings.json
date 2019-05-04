@@ -1,4 +1,5 @@
 {
-	"Motor.LED|block": "LED 赤:0 黄:1 緑:2 青:3|%channel|電圧:0～100|%voltage"
+	"Motor.Servo|block": "サーボ 右靴:0 左靴:1 右足:2 左足:3 %channel|角度:-45～45 %degree",
+	"Motor.LED|block": "LED 赤:0 黄:1 緑:2 青:3 %channel|電圧:0～100 %voltage"
 
 }
