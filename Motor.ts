@@ -82,7 +82,7 @@ namespace Motor {
         setPWM(channel+4, 0, val);
     }
 
-    //% blockId=setServoPulse block="Servo channel|%channel|voltage %voltage"
+    //% blockId=setServoPulse block="Led channel|%channel|voltage %voltage"
     //% weight=85
     //% voltage.min=0 voltage.max=100
     export function Led(channel: number,voltage: number): void {
