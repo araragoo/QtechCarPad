@@ -53,7 +53,7 @@ namespace Motor {
 
     function driveMotor(channel: number, voltage: number): void {
         let adr;
-        switch (channel) {
+/*        switch (channel) {
             case 0: adr = DRV_ADR1; break;
             case 1: adr = DRV_ADR2; break;
             default : return;
@@ -77,9 +77,10 @@ namespace Motor {
         val = ctr + (val << 2);
 
         i2cwrite(channel,CTR_ADR, val);
+*/
     }
 
-    //% blockId=setMotor block="Motor Right:0 Left:1 %channel|BWD`FWD:-100`100 %voltage"
+    //% blockId=setMotor block="Motor Right:0 Left:1 %channel|BWD<>FWD:-100<>100 %voltage"
     //% weight=85
     //% channel.min=0 channel.max=1
     //% voltage.min=-100 voltage.max=100
