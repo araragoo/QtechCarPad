@@ -1,5 +1,23 @@
 //% weight=5 color=#0fbc11 icon="\uf112"
-namespace Motor {
+namespace モータ {
+
+    // モータアドレス
+    const DRV_ADR1 = 0x64  // DRV8830のI2Cアドレス A1 = open,  A0 = open
+    const DRV_ADR2 = 0x65  // DRV8830のI2Cアドレス A1 = open,  A0 = 1
+    const CTR_ADR  = 0x00  // CONTROLレジスタのサブアドレス
+    const FLT_ADR  = 0x01  // FAULTレジスタのアドレス
+
+    // ブリッジ制御
+    const M_STANBY  = 0 //B00   // スタンバイ   
+    const M_REVERSE = 1 //B01   // 逆転
+    const M_NORMAL  = 2 //B10   // 正転
+    const M_BRAKE   = 3 //B11   // ブレーキ
+
+    const DRV_MIN      =    0 //  0V
+    const DRV_MAX      =  100 //  3Vmax
+    const DRV_MIN_B    =    0 //  0lsb
+    const DRV_MAX_B    =   37 //  6-37lsb : 0.48-5.06V   3Vmax -> (3.0-0.48)/(5.06-0.48)*(63-6)+6 = 37lsb
+    const DRV_MAXMAX_B = 0x3F
 
     // サーボ
     const PCA9685_ADDRESS = 0x40
@@ -95,8 +113,8 @@ namespace Motor {
         if (!initialized) {
             initPCA9685();
         }
-		// 50hz: 20,000 us
-        let value = voltage * 4096 / 20000;
-        setPwm(channel, 0, value);
+        let val = voltage;
+        val = (val-LED_MIN) * (PWM_MAX-PWM_MIN) / (LED_MAX-LED_MIN);
+        setPwm(channel, 0, val);
     }
 } 
