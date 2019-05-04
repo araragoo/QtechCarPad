@@ -99,8 +99,8 @@ namespace Motor {
             initPCA9685();
         }
         let val = degree;
-//        val = (val-DEGREE_MIN) * (PWM_MAX-PWM_MIN) / (DEGREE_MAX-DEGREE_MIN);
-//        setPWM(channel+4, 0, val);
+        val = (val-DEGREE_MIN) * (PWM_MAX-PWM_MIN) / (DEGREE_MAX-DEGREE_MIN);
+        setPwm(channel+4, 0, val);
     }
 
     //% blockId=setLED block="LED Red:0 Yellow:1 Green:2 Blue:3|%channel|voltage:0Å`100|%voltage"
