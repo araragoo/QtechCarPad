@@ -9,7 +9,7 @@
     "files": [
         "README.md",
         "Motor.ts",
-        "_locales/zh/Motor-strings.json"
+        "_locales/ja/Motor-strings.json"
     ],
     "testFiles": [
         "test.ts"
