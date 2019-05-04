@@ -74,23 +74,28 @@ namespace Motor {
     //% weight=85
     //% degree.min=0 degree.max=180
     export function Servo(channel: number,degree: number): void {
-        if (!initialized) {
+		if (!initialized) {
             initPCA9685();
         }
-        let val = degree;
-        val = (val-DEGREE_MIN) * (PWM_MAX-PWM_MIN) / (DEGREE_MAX-DEGREE_MIN);
-        setPWM(channel+4, 0, val);
+		// 50hz: 20,000 us
+        let v_us = (degree * 1800 / 180 + 600); // 0.6 ~ 2.4
+        let value = v_us * 4096 / 20000;
+        setPwm(channel, 0, value);
     }
-
-    //% blockId=setServoPulse block="Led channel|%channel|voltage %voltage"
+	
+	/**
+	 * Servo Execute
+	 * @param pulse [500-2500] pulse of servo; eg: 1500, 500, 2500
+	*/
+    //% blockId=setServoPulse block="Servo channel|%channel|pulse %pulse"
     //% weight=85
-    //% voltage.min=0 voltage.max=100
-    export function Led(channel: number,voltage: number): void {
-        if (!initialized) {
+    //% pulse.min=500 pulse.max=2500
+    export function ServoPulse(channel: number,pulse: number): void {
+		if (!initialized) {
             initPCA9685();
         }
-        let val = voltage;
-        val = (val-LED_MIN) * (PWM_MAX-PWM_MIN) / (LED_MAX-LED_MIN);
-        setPwm(channel, 0, val);
+		// 50hz: 20,000 us
+        let value = pulse * 4096 / 20000;
+        setPwm(channel, 0, value);
     }
 } 
