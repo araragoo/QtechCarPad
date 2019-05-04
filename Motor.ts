@@ -92,18 +92,18 @@ namespace Motor {
 
     //% blockId=setServo block="Servo channel|%channel|degree %degree"
     //% weight=85
-    //% degree.min=0 degree.max=180
+    //% channel.min=0 channel.max=3
+    //% degree.min=-45 degree.max=45
     export function Servo(channel: number,degree: number): void {
-		if (!initialized) {
+        if (!initialized) {
             initPCA9685();
         }
-		// 50hz: 20,000 us
-        let v_us = (degree * 1800 / 180 + 600); // 0.6 ~ 2.4
-        let value = v_us * 4096 / 20000;
-        setPwm(channel, 0, value);
+        let val = degree;
+        val = (val-DEGREE_MIN) * (PWM_MAX-PWM_MIN) / (DEGREE_MAX-DEGREE_MIN);
+        setPWM(channel+4, 0, val);
     }
 
-    //% blockId=setLED block="LED Red(0)/Yellow(1)/Green(2)/Blue(3)|%channel|voltage(0Å`100)|%voltage"
+    //% blockId=setLED block="LED Red:0 Yellow:1 Green:2 Blue:3|%channel|voltage:0Å`100|%voltage"
     //% weight=85
     //% channel.min=0 channel.max=3
     //% voltage.min=0 voltage.max=100
