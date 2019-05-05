@@ -52,7 +52,7 @@ namespace Motor {
     }
 
     function driveMotor(channel: number, voltage: number): void {
-       let adr;
+       let reg;
 /*
        adr = DRV_ADR1;
          if     (channel == 0) adr = DRV_ADR1;
