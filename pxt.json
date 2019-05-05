@@ -8,8 +8,8 @@
     },
     "files": [
         "README.md",
-        "Motor.ts",
-        "_locales/ja/Motor-strings.json"
+        "Robot.ts",
+        "_locales/ja/Robot-strings.json"
     ],
     "testFiles": [
         "test.ts"
