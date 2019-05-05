@@ -57,7 +57,7 @@ namespace Motor {
         else if(channel == 1) adr = DRV_ADR2;
         else return;
 
-        pins.i2cWriteNumber(channel, channel, NumberFormat.UInt8BE);
+        pins.i2cWriteNumber(adr, channel, NumberFormat.UInt8BE);
         let val = pins.i2cReadNumber(channel, NumberFormat.UInt8BE);
         return val;
     }
