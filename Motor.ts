@@ -52,8 +52,8 @@ namespace Motor {
     }
 
     function driveMotor(channel: number, voltage: number) {
-       let reg;
 /*
+       let reg;
        adr = DRV_ADR1;
          if     (channel == 0) adr = DRV_ADR1;
         else if(channel == 1) adr = DRV_ADR2;
