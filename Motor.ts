@@ -52,7 +52,8 @@ namespace Motor {
     }
 
     function driveM(channel: number, voltage: number) {
-        pins.i2cWriteNumber(addr, reg, NumberFormat.UInt8BE);
+        
+        pins.i2cWriteNumber(addr, channel, NumberFormat.UInt8BE);
         let val = pins.i2cReadNumber(addr, NumberFormat.UInt8BE);
         return val;
     }
