@@ -52,9 +52,9 @@ namespace Motor {
     }
 
     function driveMotor(channel: number, voltage: number) {
-        let r
-/*
+        let adr;
         adr = DRV_ADR1;
+/*
         if     (channel == 0) adr = DRV_ADR1;
         else if(channel == 1) adr = DRV_ADR2;
         else return;
@@ -83,12 +83,12 @@ namespace Motor {
         i2cwrite(adr, CTR_ADR, val);
 */    }
 
-    //% blockId=setDrive block="Motor Right:0 Left:1 %channel|BWD<=>FWD:-100<=>100 %voltage"
+    //% blockId=setDrive block="Drive Right:0 Left:1 %channel|BWD<=>FWD:-100<=>100 %voltage"
     //% weight=85
     //% channel.min=0 channel.max=1
     //% voltage.min=-100 voltage.max=100
     export function Drive(channel: number,voltage: number): void {
-        driveMotor(channel, voltage)
+        driveMotor(channel, voltage);
     }
 
     function initPCA9685(): void {
