@@ -51,7 +51,7 @@ namespace Motor {
         return val;
     }
 
-    function driveMotor(channel: number, voltage: number) {
+    function driveM(channel: number, voltage: number) {
         let adr;
         adr = DRV_ADR1;
 /*
@@ -89,7 +89,7 @@ namespace Motor {
     //% channel.min=0 channel.max=1
     //% voltage.min=-100 voltage.max=100
     export function Drive(channel: number,voltage: number): void {
-        driveMotor(channel, voltage);
+        driveM(channel, voltage);
     }
 
     function initPCA9685(): void {
