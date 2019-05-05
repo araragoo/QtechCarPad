@@ -81,7 +81,8 @@ namespace Motor {
         val = ctr + (val << 2);
 
         i2cwrite(adr, CTR_ADR, val);
-*/    }
+*/
+    }
 
     //% blockId=setDrive block="Drive Right:0 Left:1 %channel|BWD<=>FWD:-100<=>100 %voltage"
     //% weight=85
