@@ -51,7 +51,8 @@ namespace Motor {
         return val;
     }
 
-    function driveMotor(channel: number, voltage: number) {
+    function i2cread(addr: number, reg: number) {
+    function i2cmotor(channel: number, voltage: number) {
         let r;
 /*
         adr = DRV_ADR1;
@@ -88,7 +89,7 @@ namespace Motor {
     //% channel.min=0 channel.max=1
     //% voltage.min=-100 voltage.max=100
     export function Drive(channel: number,voltage: number): void {
-        driveMotor(channel, voltage);
+        i2cmotor(channel, voltage);
     }
 
     function initPCA9685(): void {
