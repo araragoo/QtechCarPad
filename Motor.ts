@@ -52,15 +52,14 @@ namespace Motor {
     }
 
     function driveMotor(channel: number, voltage: number) {
+
         let adr = DRV_ADR1;
-        if     (channel == 0) adr = DRV_ADR1;
-        else if(channel == 1) adr = DRV_ADR2;
-        else return;
         switch (channel) {
-            case 0:  break;
+            case 0: adr = DRV_ADR1; break;
             case 1: adr = DRV_ADR2; break;
             default : return;
         }
+
         let ctr = M_STANBY;
         if (voltage == 0) {
             ctr = M_STANBY;
@@ -81,11 +80,11 @@ namespace Motor {
         i2cwrite(adr, CTR_ADR, val);
     }
 
-    //% blockId=setDrive block="Drive Right:0 Left:1 %channel|BWD<=>FWD:-100<=>100 %voltage"
+    //% blockId=setMortor block="Motor Right:0 Left:1 %channel|BWD<=>FWD:-100<=>100 %voltage"
     //% weight=85
     //% channel.min=0 channel.max=1
     //% voltage.min=-100 voltage.max=100
-    export function Drive(channel: number,voltage: number): void {
+    export function Motor(channel: number,voltage: number): void {
         driveMotor(channel, voltage);
     }
 
