@@ -13,5 +13,3 @@ git status
 git add -f Motor.ts
 git commit -m "add new file"
 git push origin master
-
-Extension Motor is incompatible with Motor. Remove Motor and add Motor?
