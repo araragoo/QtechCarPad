@@ -51,7 +51,7 @@ namespace Motor {
         return val;
     }
 
-    function driveMotor(channel: number, voltage: number): void {
+    function driveMotor(channel: number, voltage: number) {
        let reg;
 /*
        adr = DRV_ADR1;
