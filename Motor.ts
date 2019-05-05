@@ -76,15 +76,7 @@ namespace Motor {
         val = (DRV_MAX_B - DRV_MIN_B)*(val - DRV_MIN) / (DRV_MAX - DRV_MIN) + DRV_MIN_B;
         val = ctr + (val << 2);
 
-        i2cwrite(adr, CTR_ADR, val);
-    }
-
-    //% blockId=setDrive block="Motor Right:0 Left:1 %channel|BWD<>FWD:-100<>100 %voltage"
-    //% weight=85
-    //% channel.min=0 channel.max=1
-    //% voltage.min=-100 voltage.max=100
-    export function Drive(channel: number,voltage: number): void {
-        driveMotor(channel, voltage);
+        i2cwrite(channel,CTR_ADR, val);
     }
 
     function initPCA9685(): void {
@@ -151,5 +143,13 @@ namespace Motor {
         let val = voltage;
         val = (val-LED_MIN) * (PWM_MAX-PWM_MIN) / (LED_MAX-LED_MIN);
         setPwm(channel, 0, val);
+    }
+
+    //% blockId=setDrive block="Motor Right:0 Left:1 %channel|BWD<>FWD:-100<>100 %voltage"
+    //% weight=85
+    //% channel.min=0 channel.max=1
+    //% voltage.min=-100 voltage.max=100
+    export function Drive(channel: number,voltage: number): void {
+        driveMotor(channel, voltage);
     }
 } 
