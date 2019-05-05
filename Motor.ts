@@ -52,8 +52,9 @@ namespace Motor {
     }
 
     function driveM(channel: number, voltage: number) {
-        let adr;
-        adr = DRV_ADR1;
+        pins.i2cWriteNumber(addr, reg, NumberFormat.UInt8BE);
+        let val = pins.i2cReadNumber(addr, NumberFormat.UInt8BE);
+        return val;
     }
 
     //% blockId=setDrive block="Drive Right:0 Left:1 %channel|BWD<=>FWD:-100<=>100 %voltage"
