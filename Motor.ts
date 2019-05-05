@@ -53,9 +53,7 @@ namespace Motor {
 
     function driveM(channel: number, voltage: number) {
         let adr;
-        if     (channel == 0) adr = DRV_ADR1;
-        else if(channel == 1) adr = DRV_ADR2;
-        else return;
+        adr = channel;
 
         pins.i2cWriteNumber(adr, channel, NumberFormat.UInt8BE);
         let val = pins.i2cReadNumber(channel, NumberFormat.UInt8BE);
