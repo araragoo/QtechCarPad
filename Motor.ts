@@ -51,7 +51,6 @@ namespace Motor {
         return val;
     }
 
-    function i2cread(addr: number, reg: number) {
     function i2cmotor(channel: number, voltage: number) {
         let r;
 /*
