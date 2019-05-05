@@ -54,34 +54,6 @@ namespace Motor {
     function driveM(channel: number, voltage: number) {
         let adr;
         adr = DRV_ADR1;
-/*
-        if     (channel == 0) adr = DRV_ADR1;
-        else if(channel == 1) adr = DRV_ADR2;
-        else return;
-        switch (channel) {
-            case 0:  break;
-            case 1: adr = DRV_ADR2; break;
-            default : return;
-        }
-        let ctr;
-        if (voltage == 0) {
-            ctr = M_STANBY;
-        } else if (voltage > 0) {
-            ctr = M_NORMAL;
-        } else {
-            ctr = M_REVERSE;
-            voltage = -voltage;
-        }
-
-        let val = voltage;
-        if(val > DRV_MAX) val = DRV_MAX;
-        if(val < DRV_MIN) val = DRV_MIN;
-        
-        val = (DRV_MAX_B - DRV_MIN_B)*(val - DRV_MIN) / (DRV_MAX - DRV_MIN) + DRV_MIN_B;
-        val = ctr + (val << 2);
-
-        i2cwrite(adr, CTR_ADR, val);
-*/
     }
 
     //% blockId=setDrive block="Drive Right:0 Left:1 %channel|BWD<=>FWD:-100<=>100 %voltage"
