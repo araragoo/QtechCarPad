@@ -1,0 +1,16 @@
+https://github.com/araragoo/QTrobo
+MakeCode makecode.microbit.org
+1838e1a9cf8c6bf988adcf5081ea0bf7f7cae9ed
+
+https://github.com/waveshare/pxt-Servo
+https://github.com/sunfounder/pxt-sloth
+
+git remote add origin https://github.com/araragoo/QTrobo.git
+
+git pull origin master
+
+git add test.ts
+git status
+git add -f Robot.ts
+git commit -m "add new file"
+git push origin master
