@@ -80,6 +80,7 @@ namespace Robot {
         i2cwrite(adr, CTR_ADR, val);
     }
 
+    //  subcategory="Robot"
     //% blockId=setMortor block="Motor Right:0 Left:1 %channel|BWD<=>FWD:-100<=>100 %voltage"
     //% weight=85
     //% channel.min=0 channel.max=1
@@ -128,6 +129,7 @@ namespace Robot {
         pins.i2cWriteBuffer(PCA9685_ADDRESS, buf);
     }
 
+    //  subcategory="Robot"
     //% blockId=setServo block="Servo LowR:0 LowL:1 HighR:2 HighL:3 %channel|degree:-45Å`45 %degree"
     //% weight=85
     //% channel.min=0 channel.max=3
@@ -141,6 +143,7 @@ namespace Robot {
         setPwm(channel+4, 0, val);
     }
 
+    //  subcategory="Robot"
     //% blockId=setLED block="LED Red:0 Yellow:1 Green:2 Blue:3 %channel|voltage:0Å`100 %voltage"
     //% weight=85
     //% channel.min=0 channel.max=3
