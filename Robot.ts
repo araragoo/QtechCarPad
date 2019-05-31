@@ -76,7 +76,7 @@ namespace Robot {
         if(val > DRV_MAX) val = DRV_MAX;
         if(val < DRV_MIN) val = DRV_MIN;
         
-        val = (DRV_MAX_B - DRV_MIN_B)*(val - DRV_MIN) / (DRV_MAX - DRV_MIN) + DRV_MIN_B;
+        val = (val - DRV_MIN)*((DRV_MAX_B - DRV_MIN_B) / (DRV_MAX - DRV_MIN)) + DRV_MIN_B;
         val = ctr + (val << 2);
 
         i2cwrite(adr, CTR_ADR, val);
@@ -141,7 +141,7 @@ namespace Robot {
             initPCA9685();
         }
         let val = degree;
-        val = (val-DEGREE_MIN) * (PWM_MAX-PWM_MIN) / (DEGREE_MAX-DEGREE_MIN);
+        val = (val-DEGREE_MIN) *((PWM_MAX-PWM_MIN) / (DEGREE_MAX-DEGREE_MIN));
         setPwm(channel+4, 0, val);
     }
 
@@ -155,7 +155,7 @@ namespace Robot {
             initPCA9685();
         }
         let val = voltage;
-        val = (val-LED_MIN) * (PWM_MAX-PWM_MIN) / (LED_MAX-LED_MIN);
+        val = (val-LED_MIN) * ((PWM_MAX-PWM_MIN) / (LED_MAX-LED_MIN));
         setPwm(channel, 0, val);
     }
 } 
