@@ -95,7 +95,7 @@ namespace Robot {
         i2cwrite(PCA9685_ADDRESS, MODE1, 0x00)
         setFreq(50); //50Hz
         setPwm(0, 0, 4095);
-        for (let idx = 1; idx < 16; idx++) {
+        for (let idx = 0; idx < 16; idx++) {
             setPwm(idx, 0, 0);
         }
         initialized = true
@@ -140,7 +140,7 @@ namespace Robot {
         if (!initialized) {
             initPCA9685();
         }
-        let v_us = ((degree+90) * 1800 / 180 + 600); // 0.5 ~ 2.4 ms
+        let v_us = ((degree+90) * 1900 / 180 + 500); // 0.5 ~ 2.4 ms
         let value = v_us * 4096 / 20000; // 50hz: 20,000 us
         setPwm(channel+4, 0, val);
     }
