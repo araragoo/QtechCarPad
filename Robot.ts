@@ -95,7 +95,7 @@ namespace Robot {
         i2cwrite(PCA9685_ADDRESS, MODE1, 0x00)
         setFreq(50);
         setPwm(0, 0, 4095);
-        for (let idx = 0; idx < 16; idx++) {
+        for (let idx = 1; idx < 16; idx++) {
             setPwm(idx, 0, 0);
         }
         initialized = true
@@ -141,7 +141,7 @@ namespace Robot {
             initPCA9685();
         }
         let val = degree;
-        val = (val-DEGREE_MIN) * ((PWM_MAX-PWM_MIN) / (DEGREE_MAX-DEGREE_MIN));
+        val = (val-DEGREE_MIN) * (PWM_MAX-PWM_MIN) / (DEGREE_MAX-DEGREE_MIN);
         setPwm(channel+4, 0, val);
     }
 
