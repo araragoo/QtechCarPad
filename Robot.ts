@@ -135,12 +135,11 @@ namespace Robot {
     //% blockId=setServo block="Servo LowR:0 LowL:1 HighR:2 HighL:3 %channel|degree:-45Å`45 %degree"
     //% weight=85
     //% channel.min=0 channel.max=3
-    //% degree.min=-45 degree.max=45
+    // degree.min=-45 degree.max=45
     export function Servo(channel: number,degree: number): void {
         if (!initialized) {
             initPCA9685();
         }
-        degree += 90;
         let v_us = (degree * 1900 / 180 + 500); // 0.5 ~ 2.4 ms
         let value = v_us * 4096 / 20000; // 50hz: 20,000 us
         setPwm(channel+4, 0, val);
