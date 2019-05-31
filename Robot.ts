@@ -82,14 +82,6 @@ namespace Robot {
         i2cwrite(adr, CTR_ADR, val);
     }
 
-    //  subcategory="Robot"
-    //% blockId=setMortor block="Motor Right:0 Left:1 %channel|BWD<=>FWD:-100<=>100 %voltage"
-    //% weight=85
-    //% channel.min=0 channel.max=1
-    //% voltage.min=-100 voltage.max=100
-    export function Motor(channel: number,voltage: number): void {
-        driveMotor(channel, voltage);
-    }
 
     function initPCA9685(): void {
         i2cwrite(PCA9685_ADDRESS, MODE1, 0x00)
@@ -132,6 +124,15 @@ namespace Robot {
     }
 
     //  subcategory="Robot"
+    //% blockId=setMortor block="Motor Right:0 Left:1 %channel|BWD<=>FWD:-100<=>100 %voltage"
+    //% weight=85
+    //% channel.min=0 channel.max=1
+    //% voltage.min=-100 voltage.max=100
+    export function Motor(channel: number,voltage: number): void {
+        driveMotor(channel, voltage);
+    }
+
+    //  subcategory="Robot"
     //% blockId=setServo block="Servo LowR:0 LowL:1 HighR:2 HighL:3 %channel|degree:-45Å`45 %degree"
     //% weight=85
     //% channel.min=0 channel.max=3
@@ -141,7 +142,7 @@ namespace Robot {
             initPCA9685();
         }
         let v_us = ((degree+90) * 1900 / 180 + 500); // 0.5 ~ 2.4 ms
-        let value = v_us * 4096 / 20000; // 50hz: 20,000 us
+        let val = v_us * 4096 / 20000; // 50hz: 20,000 us
         setPwm(channel+4, 0, val);
     }
 
