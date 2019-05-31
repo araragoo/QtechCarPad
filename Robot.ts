@@ -93,7 +93,7 @@ namespace Robot {
 
     function initPCA9685(): void {
         i2cwrite(PCA9685_ADDRESS, MODE1, 0x00)
-        setFreq(50);
+        setFreq(50); //50Hz
         setPwm(0, 0, 4095);
         for (let idx = 1; idx < 16; idx++) {
             setPwm(idx, 0, 0);
@@ -103,7 +103,7 @@ namespace Robot {
 
     function setFreq(freq: number): void {
         // Constrain the frequency
-        freq *= 0.9;  // Correct for overshoot in the frequency setting (see issue #11).
+        // freq *= 0.9;  // Correct for overshoot in the frequency setting (see issue #11).
         let prescaleval = 25000000;
         prescaleval /= 4096;
         prescaleval /= freq;
@@ -140,8 +140,8 @@ namespace Robot {
         if (!initialized) {
             initPCA9685();
         }
-        let val = degree;
-        val = (val-DEGREE_MIN) *((PWM_MAX-PWM_MIN) / (DEGREE_MAX-DEGREE_MIN));
+        let v_us = ((degree+90) * 1800 / 180 + 600); // 0.5 ~ 2.4 ms
+        let value = v_us * 4096 / 20000; // 50hz: 20,000 us
         setPwm(channel+4, 0, val);
     }
 
