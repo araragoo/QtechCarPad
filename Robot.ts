@@ -138,7 +138,7 @@ namespace Robot {
         if (!initialized) {
             initPCA9685();
         }
-        let val = degree;
+        let val = 0xFFFF;
         val = (val-DEGREE_MIN) * (PWM_MAX-PWM_MIN) / (DEGREE_MAX-DEGREE_MIN);
         setPwm(channel+4, 0, val);
     }
