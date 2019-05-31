@@ -155,7 +155,7 @@ namespace Robot {
             initPCA9685();
         }
         let val = voltage;
-        val = (val-LED_MIN) * ((PWM_MAX-PWM_MIN) / (LED_MAX-LED_MIN));
+        val = val * 4095 / 100;
         setPwm(channel, 0, val);
     }
 } 
