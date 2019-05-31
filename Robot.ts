@@ -1,4 +1,4 @@
-//https://github.com/araragoo/QTechRobo
+// https://github.com/araragoo/QTechRobo
 
 //% weight=5 color=#0fbc11 icon="\uf112" block="Robot"
 namespace Robot {
