@@ -140,7 +140,7 @@ namespace Robot {
         if (!initialized) {
             initPCA9685();
         }
-        let v_us = ((degree+135) * 1900 / 180 + 500); // 0.5 ~ 2.4 ms
+        let v_us = ((degree+90) * 1900 / 180 + 500); // 0.5 ~ 2.4 ms
         let value = v_us * 4096 / 20000; // 50hz: 20,000 us
         setPwm(channel+4, 0, val);
     }
