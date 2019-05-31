@@ -142,7 +142,7 @@ namespace Robot {
         }
         degree += 120;
         let v_us = (degree * 1900 / 180 + 500); // 0.5 ~ 2.4 ms
-        let v_us = degree; // 0.5 ~ 2.4 ms
+        let val = v_us * 4096 / 20000; // 50hz: 20,000 us = 20 ms
         setPwm(channel+4, 0, val);
     }
 
