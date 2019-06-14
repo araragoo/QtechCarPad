@@ -64,30 +64,30 @@ namespace Insect {
     }
 
     //% subcategory="Move"
-    //% blockId=prgFwd-R block="fwd-R"
+    //% blockId=prgFwdR block="fwdR"
     //% weight=85
-    export function fwd-R(): void {
+    export function fwdR(): void {
         prg(4, 0)
     }
 
     //% subcategory="Move"
-    //% blockId=prgFwd-L block="fwd-L"
+    //% blockId=prgFwdL block="fwdL"
     //% weight=85
-    export function fwd-L(): void {
+    export function fwdL(): void {
         prg(0, 0)
     }
 
     //% subcategory="Move"
-    //% blockId=prgBwd-R block="bwd-R"
+    //% blockId=prgBwdR block="bwdR"
     //% weight=85
-    export function bwd-R(): void {
+    export function bwdR(): void {
         prg(4, 4)
     }
 
     //% subcategory="Move"
-    //% blockId=prgBwd-L block="bwd-L"
+    //% blockId=prgBwdL block="bwdL"
     //% weight=85
-    export function bwd-L(): void {
+    export function bwdL(): void {
         prg(0, 4)
     }
 
