@@ -33,13 +33,6 @@ namespace Insect {
         radio.sendString("l" + v)
     }
 
-    //% subcategory="Led"
-    //% blockId=ledRedOn block="redON"
-    //% weight=85
-    export function redON(): void {
-        led(1)
-    }
-
     //% subcategory="Move"
     //% blockId=prgInsect block="prg x:0<=>4 %x|y:0<=>4 %y"
     //% weight=85
@@ -112,6 +105,12 @@ namespace Insect {
         prg(0, 4)
     }
 
+    //% subcategory="LED"
+    //% blockId=ledRedOn block="redON"
+    //% weight=85
+    export function redON(): void {
+        led(1)
+    }
 
     //% subcategory="LED"
     //% blockId=ledRedOff block="redOFF"
