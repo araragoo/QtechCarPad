@@ -1,5 +1,5 @@
 {
 	"Insect|block": "昆虫ロボット",
-	"Insect.prg|動き": "左<=>右:0<=>4 %x|前<=>後:0<=>4 %y",
+	"Insect.prg|block": "動き 左<=>右:0<=>4 %x|前<=>後:0<=>4 %y",
 	"Insect.stop|block": "停止"
 }
