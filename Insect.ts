@@ -26,6 +26,13 @@ namespace Insect {
         radio.sendString("m" + x + y)
     }
 
+    function led(v: number): void {
+        if (!initialized) {
+              initBT();
+        }
+        radio.sendString("l" + v)
+    }
+
     //% subcategory="Move"
     //% blockId=prgInsect block="prg x:0<=>4 %x|y:0<=>4 %y"
     //% weight=85
@@ -98,8 +105,59 @@ namespace Insect {
         prg(0, 4)
     }
 
+    //% subcategory="LED"
+    //% blockId=ledRedOn block="redON"
+    //% weight=85
+    export function redON(): void {
+        led(1)
+    }
 
+    //% subcategory="LED"
+    //% blockId=ledRedOff block="redOFF"
+    //% weight=85
+    export function redOFF(): void {
+        led(0)
+    }
 
+    //% subcategory="LED"
+    //% blockId=ledYellowOn block="yellowON"
+    //% weight=85
+    export function redON(): void {
+        led(1)
+    }
 
+    //% subcategory="LED"
+    //% blockId=ledYellowOff block="yellowOFF"
+    //% weight=85
+    export function yellowOFF(): void {
+        led(0)
+    }
 
+    //% subcategory="LED"
+    //% blockId=ledGreenOn block="greenON"
+    //% weight=85
+    export function greenON(): void {
+        led(1)
+    }
+
+    //% subcategory="LED"
+    //% blockId=ledGreenOff block="greenOFF"
+    //% weight=85
+    export function greenOFF(): void {
+        led(0)
+    }
+
+    //% subcategory="LED"
+    //% blockId=ledBlueOn block="blueON"
+    //% weight=85
+    export function blueON(): void {
+        led(1)
+    }
+
+    //% subcategory="LED"
+    //% blockId=ledBlueOff block="blueOFF"
+    //% weight=85
+    export function blueOFF(): void {
+        led(0)
+    }
 } 
