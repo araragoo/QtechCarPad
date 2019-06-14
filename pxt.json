@@ -8,7 +8,7 @@
     },
     "files": [
         "README.md",
-        "Robot.ts",
+        "Insect.ts",
         "_locales/ja/Robot-strings.json"
     ],
     "testFiles": [
