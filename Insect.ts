@@ -3,17 +3,17 @@
 //% weight=5 color=#0fbc11 icon="\uf112" block="Insect"
 namespace Insect {
 
-    // ÉÇÅ[É^ÉAÉhÉåÉX
-    const DRV_ADR1 = 0x64  // DRV8830ÇÃI2CÉAÉhÉåÉX A1 = open,  A0 = open
-    const DRV_ADR2 = 0x65  // DRV8830ÇÃI2CÉAÉhÉåÉX A1 = open,  A0 = 1
-    const CTR_ADR  = 0x00  // CONTROLÉåÉWÉXÉ^ÇÃÉTÉuÉAÉhÉåÉX
-    const FLT_ADR  = 0x01  // FAULTÉåÉWÉXÉ^ÇÃÉAÉhÉåÉX
+    // „É¢„Éº„Çø„Ç¢„Éâ„É¨„Çπ
+    const DRV_ADR1 = 0x64  // DRV8830„ÅÆI2C„Ç¢„Éâ„É¨„Çπ A1 = open,  A0 = open
+    const DRV_ADR2 = 0x65  // DRV8830„ÅÆI2C„Ç¢„Éâ„É¨„Çπ A1 = open,  A0 = 1
+    const CTR_ADR  = 0x00  // CONTROL„É¨„Ç∏„Çπ„Çø„ÅÆ„Çµ„Éñ„Ç¢„Éâ„É¨„Çπ
+    const FLT_ADR  = 0x01  // FAULT„É¨„Ç∏„Çπ„Çø„ÅÆ„Ç¢„Éâ„É¨„Çπ
 
-    // ÉuÉäÉbÉWêßå‰
-    const M_STANBY  = 0 //B00   // ÉXÉ^ÉìÉoÉC   
-    const M_REVERSE = 1 //B01   // ãtì]
-    const M_NORMAL  = 2 //B10   // ê≥ì]
-    const M_BRAKE   = 3 //B11   // ÉuÉåÅ[ÉL
+    // „Éñ„É™„ÉÉ„Ç∏Âà∂Âæ°
+    const M_STANBY  = 0 //B00   // „Çπ„Çø„É≥„Éê„Ç§   
+    const M_REVERSE = 1 //B01   // ÈÄÜËª¢
+    const M_NORMAL  = 2 //B10   // Ê≠£Ëª¢
+    const M_BRAKE   = 3 //B11   // „Éñ„É¨„Éº„Ç≠
 
     const DRV_MIN      =    0 //  0V
     const DRV_MAX      =  100 //  3Vmax
@@ -21,7 +21,7 @@ namespace Insect {
     const DRV_MAX_B    =   37 //  6-37lsb : 0.48-5.06V   3Vmax -> (3.0-0.48)/(5.06-0.48)*(63-6)+6 = 37lsb
     const DRV_MAXMAX_B = 0x3F
 
-    // ÉTÅ[É{
+    // „Çµ„Éº„Éú
     const PCA9685_ADDRESS = 0x40
     const MODE1 = 0x00
     const PRESCALE = 0xFE
@@ -133,8 +133,8 @@ namespace Insect {
     }
 
     //  subcategory="Robot"
-    //  blockId=setServo block="Servo LowR:0 LowL:1 HighR:2 HighL:3 %channel|degree:-45Å`45 %degree"
-    //% blockId=setServo block="Servo FrontR:0 FrontL:1 RearR:2 RearL:3 %channel|degree:0Å`180 %degree"
+    //  blockId=setServo block="Servo LowR:0 LowL:1 HighR:2 HighL:3 %channel|degree:-45ÔΩû45 %degree"
+    //% blockId=setServo block="Servo FrontR:0 FrontL:1 RearR:2 RearL:3 %channel|degree:0ÔΩû180 %degree"
     //% weight=85
     //% channel.min=0 channel.max=3
     //% degree.min=0 degree.max=180
