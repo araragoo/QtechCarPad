@@ -154,6 +154,6 @@ namespace Insect {
     //% weight=85
     //% x.min=0 x.max=4
     //% y.min=0 y.max=4
-    export function Insect(x: number,y: number): void {
+    export function prg(x: number,y: number): void {
     }
 } 
