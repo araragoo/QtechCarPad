@@ -155,5 +155,6 @@ namespace Insect {
     //% x.min=0 x.max=4
     //% y.min=0 y.max=4
     export function prg(x: number,y: number): void {
+        setPwm(channel+4, 0, val);
     }
 } 
