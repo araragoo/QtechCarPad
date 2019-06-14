@@ -105,7 +105,7 @@ namespace Insect {
         prg(0, 4)
     }
 
-    //% subcategory="LED"
+    //% subcategory="Led"
     //% blockId=ledRedOn block="redON"
     //% weight=85
     export function redON(): void {
