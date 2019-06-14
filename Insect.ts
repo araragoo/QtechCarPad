@@ -2,10 +2,21 @@
 
 //% weight=5 color=#0fbc11 icon="\uf112" block="Insect"
 namespace Insect {
+
+    let initialized = false
+
     let prev_y = 0
     let prev_x = 0
 
+    function initBT(): void {
+        radio.setGroup(1)
+        initialized = true
+    }
+
     function drive(x: number, y: number): void {
+        if (!initialized) {
+              initBT();
+        }
         if (x != prev_x || y != prev_y) {
             led.unplot(prev_x, prev_y)
         }
@@ -15,7 +26,7 @@ namespace Insect {
         radio.sendString("m" + x + y)
     }
 
-    //  subcategory="Insect"
+    //% subcategory="Move"
     //% blockId=prgInsect block="prg x:0<=>4 %x|y:0<=>4 %y"
     //% weight=85
     //% x.min=0 x.max=4
@@ -24,34 +35,60 @@ namespace Insect {
         drive(x, y)
     }
 
-    //  subcategory="Insect"
+    //% subcategory="Move"
     //% blockId=prgFwd block="fwd"
     //% weight=85
-    //% x.min=0 x.max=4
-    //% y.min=0 y.max=4
     export function fwd(): void {
         prg(2, 0)
     }
 
-    //  subcategory="Insect"
+    //%  subcategory="Move"
     //% blockId=prgBwd block="bwd"
     //% weight=85
     export function bwd(): void {
         prg(2, 4)
     }
 
-    //  subcategory="Insect"
+    //% subcategory="Move"
     //% blockId=prgRight block="right"
     //% weight=85
     export function right(): void {
         prg(4, 2)
     }
 
-    //  subcategory="Insect"
+    //% subcategory="Move"
     //% blockId=prgLeft block="left"
     //% weight=85
     export function left(): void {
         prg(0, 2)
+    }
+
+    //% subcategory="Move"
+    //% blockId=prgFwd-R block="fwd-R"
+    //% weight=85
+    export function fwd-R(): void {
+        prg(4, 0)
+    }
+
+    //% subcategory="Move"
+    //% blockId=prgFwd-L block="fwd-L"
+    //% weight=85
+    export function fwd-L(): void {
+        prg(0, 0)
+    }
+
+    //% subcategory="Move"
+    //% blockId=prgBwd-R block="bwd-R"
+    //% weight=85
+    export function bwd-R(): void {
+        prg(4, 4)
+    }
+
+    //% subcategory="Move"
+    //% blockId=prgBwd-L block="bwd-L"
+    //% weight=85
+    export function bwd-L(): void {
+        prg(0, 4)
     }
 
 } 
