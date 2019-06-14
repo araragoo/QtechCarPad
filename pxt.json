@@ -9,7 +9,7 @@
     "files": [
         "README.md",
         "Insect.ts",
-        "_locales/ja/Robot-strings.json"
+        "_locales/ja/Insect-strings.json"
     ],
     "testFiles": [
         "test.ts"
