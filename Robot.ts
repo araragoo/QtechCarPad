@@ -149,17 +149,5 @@ namespace Robot {
         setPwm(channel+4, 0, val);
     }
 
-    //  subcategory="Robot"
-    //% blockId=setLED block="LED Red:0 Yellow:1 Green:2 Blue:3 %channel|voltage:0Å`100 %voltage"
-    //% weight=85
-    //% channel.min=0 channel.max=3
-    //% voltage.min=0 voltage.max=100
-    export function LED(channel: number,voltage: number): void {
-        if (!initialized) {
-            initPCA9685();
-        }
-        let val = voltage * 81 / 2;
-//        val = val * 4095 / 100;
-        setPwm(channel, 0, val);
-    }
+
 } 
