@@ -36,6 +36,13 @@ namespace Insect {
     }
 
     //% subcategory="Move"
+    //% blockId=prgStop block="stop"
+    //% weight=85
+    export function stop(): void {
+        prg(2, 2)
+    }
+
+    //% subcategory="Move"
     //% blockId=prgFwd block="fwd"
     //% weight=85
     export function fwd(): void {
@@ -90,5 +97,9 @@ namespace Insect {
     export function bwdL(): void {
         prg(0, 4)
     }
+
+
+
+
 
 } 
