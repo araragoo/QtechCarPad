@@ -149,7 +149,7 @@ namespace Insect {
         setPwm(channel+4, 0, val);
     }
 
-    //  subcategory="Robot"
+    //  subcategory="Insect"
     //% blockId=prgInsect block="x:0<=>4 %x|y:0<=>4 %y"
     //% weight=85
     //% x.min=0 x.max=4
