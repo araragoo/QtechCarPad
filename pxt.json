@@ -1,7 +1,7 @@
 {
     "name": "Robot",
     "version": "0.0.0",
-    "description": "Extension for DRV8830 Motor Drive",
+    "description": "Extension for DRV8830 Motor Drive2",
     "license": "Ara",
     "dependencies": {
         "core": "*"
