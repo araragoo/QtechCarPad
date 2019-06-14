@@ -12,5 +12,5 @@ Extension for DRV8830 Motor control ,Use with Micro:bit
 (The metadata above is needed for package search.)
 
 ```package
-Motor=github.com/araragoo/QtechInsectPrg
+MotorInsect=github.com/araragoo/QtechInsectPrg
 ```
