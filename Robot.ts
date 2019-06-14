@@ -1,7 +1,7 @@
 // https://github.com/araragoo/QTechCag
 
-//% weight=5 color=#0fbc11 icon="\uf112" block="Robot"
-namespace Robot {
+//% weight=5 color=#0fbc11 icon="\uf112" block="Insect"
+namespace Insect {
 
     // モータアドレス
     const DRV_ADR1 = 0x64  // DRV8830のI2Cアドレス A1 = open,  A0 = open
