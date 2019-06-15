@@ -26,11 +26,18 @@ namespace Insect {
         radio.sendString("m" + x + y)
     }
 
-    function led(v: number): void {
+    function drv(col: number, v: number): void {
         if (!initialized) {
               initBT();
         }
-        radio.sendString("l" + v)
+        if(col == 0)
+            radio.sendString("r" + v)
+        else if(col == 1)
+            radio.sendString("y" + v)
+        else if(col == 2){
+            radio.sendString("g" + v)
+        else
+            radio.sendString("b" + v)
     }
 
     //% subcategory="Move"
@@ -109,55 +116,55 @@ namespace Insect {
     //% blockId=ledRedOn block="redON"
     //% weight=85
     export function redON(): void {
-        led(1)
+        drv(0, 1)
     }
 
     //% subcategory="LED"
     //% blockId=ledRedOff block="redOFF"
     //% weight=85
     export function redOFF(): void {
-        led(0)
+        drv(0, 0)
     }
 
     //% subcategory="LED"
     //% blockId=ledYellowOn block="yellowON"
     //% weight=85
     export function yellowON(): void {
-        led(1)
+        drv(1, 1)
     }
 
     //% subcategory="LED"
     //% blockId=ledYellowOff block="yellowOFF"
     //% weight=85
     export function yellowOFF(): void {
-        led(0)
+        drv(1, 0)
     }
 
     //% subcategory="LED"
     //% blockId=ledGreenOn block="greenON"
     //% weight=85
     export function greenON(): void {
-        led(1)
+        drv(2, 1)
     }
 
     //% subcategory="LED"
     //% blockId=ledGreenOff block="greenOFF"
     //% weight=85
     export function greenOFF(): void {
-        led(0)
+        drv(2, 0)
     }
 
     //% subcategory="LED"
     //% blockId=ledBlueOn block="blueON"
     //% weight=85
     export function blueON(): void {
-        led(1)
+        drv(3, 1)
     }
 
     //% subcategory="LED"
     //% blockId=ledBlueOff block="blueOFF"
     //% weight=85
     export function blueOFF(): void {
-        led(0)
+        drv(3, 0)
     }
 } 
