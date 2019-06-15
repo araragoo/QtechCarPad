@@ -34,7 +34,7 @@ namespace Insect {
             radio.sendString("r" + v)
         else if(col == 1)
             radio.sendString("y" + v)
-        else if(col == 2){
+        else if(col == 2)
             radio.sendString("g" + v)
         else
             radio.sendString("b" + v)
