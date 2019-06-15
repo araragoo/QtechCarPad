@@ -1,6 +1,23 @@
 {
 	"Insect|block": "昆虫ロボット",
-	"Insect.Move|block": "動き",
+	"Move|block": "動き",
 	"Insect.prg|block": "方向 左<=>右:0<=>4 %x|前<=>後:0<=>4 %y",
-	"Insect.prgStop|block": "停止"
+	"Insect.stop|block": "止",
+	"Insect.fwd|block": "前",
+	"Insect.bwd|block": "後",
+	"Insect.right|block": "右",
+	"Insect.left|block": "左",
+	"Insect.fwdR|block": "前右",
+	"Insect.fwdL|block": "前左",
+	"Insect.bwdR|block": "後右",
+	"Insect.bwdL|block": "後左",
+	"LED|block": "光",
+	"Insect.redON|block": "赤オン",
+	"Insect.redOFF|block": "赤オフ",
+	"Insect.yellowON|block": "黄オン",
+	"Insect.yellowOFF|block": "黄オフ",
+	"Insect.greenON|block": "緑オン",
+	"Insect.greenOFF|block": "緑オフ",
+	"Insect.blueON|block": "青オン",
+	"Insect.blueOFF|block": "青オフ"
 }
