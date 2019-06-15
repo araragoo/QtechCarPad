@@ -122,7 +122,7 @@ namespace Insect {
     //% subcategory="LED"
     //% blockId=ledYellowOn block="yellowON"
     //% weight=85
-    export function redON(): void {
+    export function yellowON(): void {
         led(1)
     }
 
