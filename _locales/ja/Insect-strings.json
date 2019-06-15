@@ -1,6 +1,5 @@
 {
 	"Insect|block": "昆虫ロボット",
-	"Move|block": "動き",
 	"Insect.prg|block": "方向 左<=>右:0<=>4 %x|前<=>後:0<=>4 %y",
 	"Insect.stop|block": "止",
 	"Insect.fwd|block": "前",
@@ -11,7 +10,6 @@
 	"Insect.fwdL|block": "前左",
 	"Insect.bwdR|block": "後右",
 	"Insect.bwdL|block": "後左",
-	"LED|block": "光",
 	"Insect.redON|block": "赤オン",
 	"Insect.redOFF|block": "赤オフ",
 	"Insect.yellowON|block": "黄オン",
