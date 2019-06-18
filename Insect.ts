@@ -255,10 +255,10 @@ namespace Insect {
     }
 
     //% subcategory="Music"
-    //% blockId=setMusic1 block="music1 No.0<=>9 %n"
+    //% blockId=setMusic1 block="musicF No.0<=>9 %n"
     //% weight=85
     //% n.min=0 n.max=9
-    export function music1(n: number): void {
+    export function musicF(n: number): void {
         if (!initialized) {
               initBT();
         }
@@ -266,10 +266,10 @@ namespace Insect {
     }
 
     //% subcategory="Music"
-    //% blockId=setMusic2 block="music2 No.0<=>9 %n"
+    //% blockId=setMusic2 block="musicS No.0<=>9 %n"
     //% weight=85
     //% n.min=0 n.max=9
-    export function music2(n: number): void {
+    export function musicS(n: number): void {
         if (!initialized) {
               initBT();
         }
