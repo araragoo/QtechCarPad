@@ -7,14 +7,35 @@ namespace Insect {
 
     let prev_y = 0
     let prev_x = 0
-    let str: string[] = []
-    let aCount = 0
+
+    let aCount  = 0
+    let bCount  = 0
+    let abCount = 0
+    let p0Count = 0
+    let p1Count = 0
+    let p2Count = 0
 
     radio.onReceivedString(
         function (receivedString) {
             if ("a".compare(receivedString.charAt(0)) == 0) {
                 aCount += 1
             }
+            if ("b".compare(receivedString.charAt(0)) == 0) {
+                bCount += 1
+            }
+            if ("ab".compare(receivedString.substr(0, 2)) == 0) {
+                abCount += 1
+            }
+            if ("p0".compare(receivedString.substr(0, 2)) == 0) {
+                p0Count += 1
+            }
+            if ("p1".compare(receivedString.substr(0, 2)) == 0) {
+                p1Count += 1
+            }
+            if ("p2".compare(receivedString.substr(0, 2)) == 0) {
+                p2Count += 1
+            }
+
         }
     )
 
@@ -182,6 +203,60 @@ namespace Insect {
     //% blockId=swA block="A"
     //% weight=85
     export function A(): number {
+        if (!initialized) {
+              initBT();
+        }
         return aCount
     }
+
+    //% subcategory="Radio"
+    //% blockId=swB block="B"
+    //% weight=85
+    export function B(): number {
+        if (!initialized) {
+              initBT();
+        }
+        return bCount
+    }
+
+    //% subcategory="Radio"
+    //% blockId=swAB block="AB"
+    //% weight=85
+    export function AB(): number {
+        if (!initialized) {
+              initBT();
+        }
+        return abCount
+    }
+
+    //% subcategory="Radio"
+    //% blockId=swP0 block="P0"
+    //% weight=85
+    export function P0(): number {
+        if (!initialized) {
+              initBT();
+        }
+        return p0Count
+    }
+
+    //% subcategory="Radio"
+    //% blockId=swP1 block="P1"
+    //% weight=85
+    export function P1(): number {
+        if (!initialized) {
+              initBT();
+        }
+        return p1Count
+    }
+
+    //% subcategory="Radio"
+    //% blockId=swP2 block="P2"
+    //% weight=85
+    export function P2(): number {
+        if (!initialized) {
+              initBT();
+        }
+        return p2Count
+    }
+
 } 
