@@ -7,6 +7,16 @@ namespace Insect {
 
     let prev_y = 0
     let prev_x = 0
+    let str: string[] = []
+    let aCount = 0
+
+    radio.onReceivedString(
+        function (receivedString) {
+            if ("a".compare(receivedString.charAt(0)) == 0) {
+                aCount += 1
+            }
+        }
+    )
 
     function initBT(): void {
         radio.setGroup(1)
@@ -166,5 +176,12 @@ namespace Insect {
     //% weight=85
     export function blueOFF(): void {
         drv(3, 0)
+    }
+
+    //% subcategory="Radio"
+    //% blockId=swA block="A"
+    //% weight=85
+    export function A(): number {
+        return aCount
     }
 } 
