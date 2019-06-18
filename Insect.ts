@@ -35,7 +35,7 @@ namespace Insect {
     )
 
     function initBT(): void {
-        radio.setGroup(1)
+        // radio.setGroup(1)
         initialized = true
     }
 
@@ -64,6 +64,14 @@ namespace Insect {
             radio.sendString("g" + v)
         else
             radio.sendString("b" + v)
+    }
+
+    //% subcategory="Move"
+    //% blockId=setRadio block="radio group:0<=>83 %x|y:0<=>4 %y"
+    //% weight=85
+    //% n.min=0 x.max=83
+    export function radio(n: number): void {
+        radio.setGroup(n)
     }
 
     //% subcategory="Move"
@@ -254,8 +262,8 @@ namespace Insect {
         return p2Count
     }
 
-    //% subcategory="Music"
-    //% blockId=setMusic1 block="musicF No.0<=>9 %n"
+    //% subcategory="Music1"
+    //% blockId=setMusicF block="musicF No.0<=>9 %n"
     //% weight=85
     //% n.min=0 n.max=9
     export function musicF(n: number): void {
@@ -265,8 +273,19 @@ namespace Insect {
         radio.sendString("s" + n)
     }
 
-    //% subcategory="Music"
-    //% blockId=setMusic2 block="musicS No.0<=>9 %n"
+    //% subcategory="Music1"
+    //% blockId=swP2 block="dadadum"
+    //% weight=85
+    export function dadadum(): number {
+        if (!initialized) {
+              initBT();
+        }
+        return 0
+    }
+
+
+    //% subcategory="Music2"
+    //% blockId=setMusicS block="musicS No.0<=>9 %n"
     //% weight=85
     //% n.min=0 n.max=9
     export function musicS(n: number): void {
