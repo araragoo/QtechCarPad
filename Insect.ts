@@ -66,7 +66,7 @@ namespace Insect {
             radio.sendString("b" + v)
     }
 
-    //% subcategory="Move"
+    //  subcategory="Move"
     //% blockId=setRadio block="radio group:0<=>83 %x|y:0<=>4 %y"
     //% weight=85
     //% n.min=0 x.max=83
@@ -206,9 +206,6 @@ namespace Insect {
     //% blockId=swA block="A"
     //% weight=85
     export function A(): number {
-        if (!initialized) {
-              initBT();
-        }
         return aCount
     }
 
@@ -216,9 +213,6 @@ namespace Insect {
     //% blockId=swB block="B"
     //% weight=85
     export function B(): number {
-        if (!initialized) {
-              initBT();
-        }
         return bCount
     }
 
@@ -226,9 +220,6 @@ namespace Insect {
     //% blockId=swAB block="AB"
     //% weight=85
     export function AB(): number {
-        if (!initialized) {
-              initBT();
-        }
         return abCount
     }
 
@@ -236,9 +227,6 @@ namespace Insect {
     //% blockId=swP0 block="P0"
     //% weight=85
     export function P0(): number {
-        if (!initialized) {
-              initBT();
-        }
         return p0Count
     }
 
@@ -246,9 +234,6 @@ namespace Insect {
     //% blockId=swP1 block="P1"
     //% weight=85
     export function P1(): number {
-        if (!initialized) {
-              initBT();
-        }
         return p1Count
     }
 
@@ -256,9 +241,6 @@ namespace Insect {
     //% blockId=swP2 block="P2"
     //% weight=85
     export function P2(): number {
-        if (!initialized) {
-              initBT();
-        }
         return p2Count
     }
 
@@ -277,12 +259,71 @@ namespace Insect {
     //% blockId=setDadadum block="dadadum"
     //% weight=85
     export function dadadum(): number {
-        if (!initialized) {
-              initBT();
-        }
         return 0
     }
 
+    //% subcategory="Music1"
+    //% blockId=setEntertainer block="entertainer"
+    //% weight=85
+    export function entertainer(): number {
+        return 1
+    }
+
+    //% subcategory="Music1"
+    //% blockId=setPrelude block="prelude"
+    //% weight=85
+    export function prelude(): number {
+        return 2
+    }
+
+    //% subcategory="Music1"
+    //% blockId=setOde block="ode"
+    //% weight=85
+    export function ode(): number {
+        return 3
+    }
+
+    //% subcategory="Music1"
+    //% blockId=setNyan block="nyan"
+    //% weight=85
+    export function nyan(): number {
+        return 4
+    }
+
+    //% subcategory="Music1"
+    //% blockId=setRingtone block="ringtone"
+    //% weight=85
+    export function ringtone(): number {
+        return 5
+    }
+
+    //% subcategory="Music1"
+    //% blockId=setFunk block="funk"
+    //% weight=85
+    export function funk(): number {
+        return 6
+    }
+
+    //% subcategory="Music1"
+    //% blockId=setBlues block="blues"
+    //% weight=85
+    export function blues(): number {
+        return 7
+    }
+
+    //% subcategory="Music1"
+    //% blockId=setBirthday block="birthday"
+    //% weight=85
+    export function birthday(): number {
+        return 8
+    }
+
+    //% subcategory="Music1"
+    //% blockId=setWedding block="wedding"
+    //% weight=85
+    export function wedding(): number {
+        return 9
+    }
 
     //% subcategory="Music2"
     //% blockId=setMusicS block="musicS No.0<=>9 %n"
@@ -293,5 +334,75 @@ namespace Insect {
               initBT();
         }
         radio.sendString("p" + n)
+    }
+
+    //% subcategory="Music2"
+    //% blockId=setFunereal block="funereal"
+    //% weight=85
+    export function funereal(): number {
+        return 0
+    }
+
+    //% subcategory="Music2"
+    //% blockId=setPunchline block="punchline"
+    //% weight=85
+    export function punchline(): number {
+        return 1
+    }
+
+    //% subcategory="Music2"
+    //% blockId=setBadduy block="badduy"
+    //% weight=85
+    export function badduy(): number {
+        return 2
+    }
+
+    //% subcategory="Music2"
+    //% blockId=setChasel block="chase"
+    //% weight=85
+    export function chase(): number {
+        return 3
+    }
+
+    //% subcategory="Music2"
+    //% blockId=setBaDing block="ba ding"
+    //% weight=85
+    export function ba(): number {
+        return 4
+    }
+
+    //% subcategory="Music2"
+    //% blockId=setWawawaaa block="wawawaaa"
+    //% weight=85
+    export function wawawaaa(): number {
+        return 5
+    }
+
+    //% subcategory="Music2"
+    //% blockId=setJumpUp block="jumpUp"
+    //% weight=85
+    export function jumpUp(): number {
+        return 6
+    }
+
+    //% subcategory="Music2"
+    //% blockId=setJumpDown block="jumpDown"
+    //% weight=85
+    export function jumpDown(): number {
+        return 7
+    }
+
+    //% subcategory="Music2"
+    //% blockId=setPowerUp block="powerUp"
+    //% weight=85
+    export function powerUpl(): number {
+        return 8
+    }
+
+    //% subcategory="Music2"
+    //% blockId=setPowerDown block="powerDown"
+    //% weight=85
+    export function powerDown(): number {
+        return 9
     }
 } 
