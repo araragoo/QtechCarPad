@@ -19,20 +19,15 @@ namespace Insect {
         function (receivedString) {
             if ("a".compare(receivedString.charAt(0)) == 0) {
                 aCount += 1
-            }
-            if ("b".compare(receivedString.charAt(0)) == 0) {
+            } else if ("b".compare(receivedString.charAt(0)) == 0) {
                 bCount += 1
-            }
-            if ("ab".compare(receivedString.substr(0, 2)) == 0) {
+            } else if ("ab".compare(receivedString.substr(0, 2)) == 0) {
                 abCount += 1
-            }
-            if ("p0".compare(receivedString.substr(0, 2)) == 0) {
+            } else if ("p0".compare(receivedString.substr(0, 2)) == 0) {
                 p0Count += 1
-            }
-            if ("p1".compare(receivedString.substr(0, 2)) == 0) {
+            } else if ("p1".compare(receivedString.substr(0, 2)) == 0) {
                 p1Count += 1
-            }
-            if ("p2".compare(receivedString.substr(0, 2)) == 0) {
+            } else if ("p2".compare(receivedString.substr(0, 2)) == 0) {
                 p2Count += 1
             }
 
