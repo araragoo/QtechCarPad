@@ -1,5 +1,6 @@
 {
 	"Insect|block": "昆虫ロボット",
+	"Insect.Move|subcategory": "動き",
 	"Insect.prg|block": "方向 左<=>右:0<=>4 %x|前<=>後:0<=>4 %y",
 	"Insect.stop|block": "止",
 	"Insect.fwd|block": "前",
@@ -17,5 +18,7 @@
 	"Insect.greenON|block": "緑オン",
 	"Insect.greenOFF|block": "緑オフ",
 	"Insect.blueON|block": "青オン",
-	"Insect.blueOFF|block": "青オフ"
+	"Insect.blueOFF|block": "青オフ",
+	"Insect.music1|block": "音楽１ No.0～9 %n",
+	"Insect.music2|block": "音楽２ No.0～9 %n"
 }
