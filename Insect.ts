@@ -254,19 +254,5 @@ namespace Insect {
         return p2Count
     }
 
-    //% subcategory="Music"
-    //% blockId=prgInsect block="music1 No.0<=>9 %n"
-    //% weight=85
-    //% n.min=0 n.max=9
-    export function music1(n: number): void {
-        radio.sendString("s" + n)
-    }
 
-    //% subcategory="Music"
-    //% blockId=prgInsect block="music2 No.0<=>9 %n"
-    //% weight=85
-    //% n.min=0 n.max=9
-    export function music2(n: number): void {
-        radio.sendString("p" + n)
-    }
 } 
