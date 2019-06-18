@@ -15,9 +15,9 @@
 	"Insect.redOFF|block": "赤オフ",
 	"Insect.yellowON|block": "黄オン",
 	"Insect.yellowOFF|block": "黄オフ",
-	"Insect.greenON|block": "緑オン",
+	"Insect.greenON|blbock": "緑オン",
 	"Insect.greenOFF|block": "緑オフ",
-	"Insect.blueON|block": "青オン",
+	"Insect.blueON|blbock": "青オン",
 	"Insect.blueOFF|block": "青オフ",
 	"Insect.music1|block": "音楽１ No.0～9 %n",
 	"Insect.music2|block": "音楽２ No.0～9 %n"
