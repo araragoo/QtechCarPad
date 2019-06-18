@@ -18,6 +18,6 @@
 	"Insect.greenOFF|block": "緑オフ",
 	"Insect.blueON|blbock": "青オン",
 	"Insect.blueOFF|block": "青オフ",
-	"Insect.music1|block": "音楽１ No.0～9 %n",
-	"Insect.music2|block": "音楽２ No.0～9 %n"
+	"Insect.musicF|block": "音楽１ No.0～9 %n",
+	"Insect.musicS|block": "音楽２ No.0～9 %n"
 }
