@@ -274,7 +274,7 @@ namespace Insect {
     }
 
     //% subcategory="Music1"
-    //% blockId=swP2 block="dadadum"
+    //% blockId=setDadadum block="dadadum"
     //% weight=85
     export function dadadum(): number {
         if (!initialized) {
