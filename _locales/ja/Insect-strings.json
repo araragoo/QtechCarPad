@@ -35,10 +35,10 @@
 	"Insect.punchline|block": "ちゃんちゃん",
 	"Insect.badduy|block": "タッタラッタッター",
 	"Insect.chase|block": "チェイス",
-	"Insect.ba ding|block": "ピコーン！",
+	"Insect.baDing|block": "ピコーン！",
 	"Insect.wawawaaa|block": "ワワワワー",
-	"Insect.jump up|block": "ジャンプアップ",
-	"Insect.jump down|block": "ジャンプダウン",
-	"Insect.power up|block": "パワーアップ",
-	"Insect.power down|block": "パワーダウン"
+	"Insect.jumpUp|block": "ジャンプアップ",
+	"Insect.jumpDown|block": "ジャンプダウン",
+	"Insect.powerUp|block": "パワーアップ",
+	"Insect.powerDown|block": "パワーダウン"
 }
