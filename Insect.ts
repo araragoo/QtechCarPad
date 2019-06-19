@@ -66,7 +66,7 @@ namespace Insect {
             radio.sendString("b" + v)
     }
 
-    //  subcategory="Radio"
+    //% subcategory="Radio"
     //% blockId=setRadio block="radio group:0<=>83 %n"
     //% weight=85
     //% n.min=0 n.max=83
