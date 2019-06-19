@@ -1,7 +1,8 @@
 {
 	"Insect|block": "昆虫ロボット",
 	"Insect.Move|subcategory": "動き",
-	"Insect.Move|block": "動き",
+	"Insect.Move|block": "動き"
+	"Insect.Move": "動き",
 	"Move|subcategory": "動き",
 	"Move|category": "動き",
 	"Move|block": "動き",
