@@ -67,9 +67,9 @@ namespace Insect {
     }
 
     //  subcategory="Move"
-    //% blockId=setRadio block="radio group:0<=>83 %x|y:0<=>4 %y"
+    //% blockId=setRadio block="radio group:0<=>83 %n"
     //% weight=85
-    //% n.min=0 x.max=83
+    //% n.min=0 n.max=83
     export function radio(n: number): void {
         radio.setGroup(n)
     }
