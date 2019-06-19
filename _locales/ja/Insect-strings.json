@@ -1,5 +1,6 @@
 {
 	"Insect|block": "昆虫ロボット",
+	"Insect.Move|block": "動き",
 	"Insect.radio|block": "無線グループ：No, 0～83 %n",
 	"Insect.prg|block": "方向 左<=>右:0<=>4 %x|前<=>後:0<=>4 %y",
 	"Insect.stop|block": "止",
@@ -15,9 +16,9 @@
 	"Insect.redOFF|block": "赤オフ",
 	"Insect.yellowON|block": "黄オン",
 	"Insect.yellowOFF|block": "黄オフ",
-	"Insect.greenON|bock": "緑オン",
+	"Insect.greenON|block": "緑オン",
 	"Insect.greenOFF|block": "緑オフ",
-	"Insect.blueON|bock": "青オン",
+	"Insect.blueON|block": "青オン",
 	"Insect.blueOFF|block": "青オフ",
 	"Insect.musicF|block": "音楽１ No.0～9 %n",
 	"Insect.dadadum|block": "ダダダム",
