@@ -6,7 +6,6 @@
 	"Move|subcategory": "動き",
 	"Move|category": "動き",
 	"Move|block": "動き",
-	"Move": "動き",
 	"Insect.radio|block": "無線グループ：No, 0～83 %n",
 	"Insect.prg|block": "方向 左<=>右:0<=>4 %x|前<=>後:0<=>4 %y",
 	"Insect.stop|block": "止",
