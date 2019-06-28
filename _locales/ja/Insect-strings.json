@@ -1,7 +1,7 @@
 {
 	"Insect|block": "昆虫ロボット",
 	"{id:subcategory}Move": "動き",
-	"{id:subcategory}Radio": "無線",
+	"{id:subcategory}Switch": "スイッチ、無線",
 	"{id:subcategory}Rotation": "傾斜",
 	"{id:subcategory}LED": "光",
 	"{id:subcategory}Music1": "音楽1",
