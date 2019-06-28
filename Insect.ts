@@ -243,7 +243,7 @@ namespace Insect {
     export function P2(): number {
         return p2Count
     }
-
+/*
     //% subcategory="Music1"
     //% blockId=setMusicF block="musicF No.0<=>9 %n"
     //% weight=85
@@ -405,4 +405,5 @@ namespace Insect {
     export function powerDown(): number {
         return 9
     }
+*/
 } 
