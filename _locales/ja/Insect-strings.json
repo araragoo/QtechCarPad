@@ -6,7 +6,7 @@
 	"{id:subcategory}LED": "光",
 	"{id:subcategory}Music1": "音楽1",
 	"{id:subcategory}Music2": "音楽2",
-	"Insect.radioGroup|block": "無線グループ：No, 0～83 %n",
+	"Insect.radioGroup|block": "無線グループ：No, 1～83 %n",
 	"Insect.showLiens|block": "全行の文字列 %text",
 	"Insect.showLine1|block": "1行の文字列 %text",
 	"Insect.showLine2|block": "2行の文字列 %text",
