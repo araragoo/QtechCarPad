@@ -1,5 +1,10 @@
 {
 	"Insect|block": "昆虫ロボット",
+	"{id:subcategory}Move": "動き",
+	"{id:subcategory}Radio": "無線",
+	"{id:subcategory}LED": "光",
+	"{id:subcategory}Music1": "音楽1",
+	"{id:subcategory}Music2": "音楽2",
 	"Insect.radio|block": "無線グループ：No, 0～83 %n",
 	"Insect.prg|block": "方向 左<=>右:0<=>4 %x|前<=>後:0<=>4 %y",
 	"Insect.stop|block": "止",
