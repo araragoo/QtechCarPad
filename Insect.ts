@@ -77,6 +77,64 @@ namespace Insect {
         radio.setGroup(n)
     }
 
+    //% subcategory="Rotation"
+    //% blockId=setRotX block="rotation X:0<=>5"
+    //% weight=85
+    export function rotX(): number {
+        let x
+        x = input.rotation(Rotation.Roll)
+        x = x / 10
+        x = x + 2
+        if (x < 1) {
+            x = 0
+        } else {
+            if (x < 2) {
+                x = 1
+            } else {
+                if (x < 3) {
+                    x = 2
+                } else {
+                    if (x < 4) {
+                        x = 3
+                    } else {
+                        x = 4
+                    }
+                }
+            }
+        }
+        rotation_x = x
+        return rotation_x
+    }
+
+    //% subcategory="Rotation"
+    //% blockId=setRotY block="rotation Y:0<=>5"
+    //% weight=85
+    export function rotY(): number {
+        let y
+        y = input.rotation(Rotation.Pitch)
+        y = y / 10
+        y = y + 2
+        if (y < 1) {
+            y = 0
+        } else {
+            if (y < 2) {
+                y = 1
+            } else {
+                if (y < 3) {
+                    y = 2
+                } else {
+                    if (y < 4) {
+                        y = 3
+                    } else {
+                        y = 4
+                    }
+                }
+            }
+        }
+        rotation_y = y
+        return rotation_y
+    }
+
     //% subcategory="Move"
     //% blockId=prgInsect block="prg x:0<=>4 %x|y:0<=>4 %y"
     //% weight=85
