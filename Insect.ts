@@ -69,15 +69,40 @@ namespace Insect {
             radio.sendString("b" + v)
     }
 
-    //% subcategory="Radio"
-    //% blockId=setRadio block="radio Group:1<=>83 %n"
-    //% weight=85
-    //% n.min=1 n.max=83
-    export function radioGroup(n: number): void {
-        radio.setGroup(n)
+    //% subcategory="LCD"
+    //% blockId="show_lines"
+    //% block="show lines %text"
+    //% weight=80
+    export function showLiens(text: string): void {
+        if (!initialized) {
+              initBT();
+        }
+        radio.sendString("l" + "0" + text)
     }
 
-    //% subcategory="Rotation"
+    //% subcategory="LCD"
+    //% blockId="show_line_1"
+    //% block="show line1 %text"
+    //% weight=80
+    export function showLine1(text: string): void {
+        if (!initialized) {
+              initBT();
+        }
+        radio.sendString("l" + "1" + text)
+    }
+
+    //% subcategory="LCD"
+    //% blockId="show_line_2"
+    //% block="show line2 %text"
+    //% weight=80
+    export function showLine2(text: string): void {
+        if (!initialized) {
+              initBT();
+        }
+        radio.sendString("l" + "2" + text)
+    }
+
+    //% subcategory="LCD"
     //% blockId=setRotX block="rotation X:0<=>5"
     //% weight=85
     export function rotX(): number {
@@ -106,7 +131,7 @@ namespace Insect {
         return rotation_x
     }
 
-    //% subcategory="Rotation"
+    //% subcategory="LCD"
     //% blockId=setRotY block="rotation Y:0<=>5"
     //% weight=85
     export function rotY(): number {
@@ -263,42 +288,50 @@ namespace Insect {
         drv(3, 0)
     }
 
-    //% subcategory="Radio"
+    //% subcategory="Switch"
+    //% blockId=setRadio block="radio Group:1<=>83 %n"
+    //% weight=85
+    //% n.min=1 n.max=83
+    export function radioGroup(n: number): void {
+        radio.setGroup(n)
+    }
+
+    //% subcategory="Switch"
     //% blockId=swA block="A"
     //% weight=85
     export function A(): number {
         return aCount
     }
 
-    //% subcategory="Radio"
+    //% subcategory="Switch"
     //% blockId=swB block="B"
     //% weight=85
     export function B(): number {
         return bCount
     }
 
-    //% subcategory="Radio"
+    //% subcategory="Switch"
     //% blockId=swAB block="AB"
     //% weight=85
     export function AB(): number {
         return abCount
     }
 
-    //% subcategory="Radio"
+    //% subcategory="Switch"
     //% blockId=swP0 block="P0"
     //% weight=85
     export function P0(): number {
         return p0Count
     }
 
-    //% subcategory="Radio"
+    //% subcategory="Switch"
     //% blockId=swP1 block="P1"
     //% weight=85
     export function P1(): number {
         return p1Count
     }
 
-    //% subcategory="Radio"
+    //% subcategory="Switch"
     //% blockId=swP2 block="P2"
     //% weight=85
     export function P2(): number {
