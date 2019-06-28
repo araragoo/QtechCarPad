@@ -65,7 +65,7 @@ namespace Insect {
         else
             radio.sendString("b" + v)
     }
-/*
+
     //% subcategory="Radio"
     //% blockId=setRadio block="radio group:0<=>83 %n"
     //% weight=85
@@ -145,7 +145,7 @@ namespace Insect {
     export function bwdL(): void {
         prg(0, 4)
     }
-
+/*
     //% subcategory="LED"
     //% blockId=ledRedOn block="redON"
     //% weight=85
