@@ -67,7 +67,7 @@ namespace Insect {
     }
 /*
     //% subcategory="Radio"
-    //% blockId=setRadio block="radio groupGroup:0<=>83 %n"
+    //% blockId=setRadio block="radio Group:0<=>83 %n"
     //% weight=85
     //% n.min=0 n.max=83
     export function radioGroup(n: number): void {
@@ -145,7 +145,7 @@ namespace Insect {
     export function bwdL(): void {
         prg(0, 4)
     }
-/*
+
     //% subcategory="LED"
     //% blockId=ledRedOn block="redON"
     //% weight=85
@@ -405,5 +405,5 @@ namespace Insect {
     export function powerDown(): number {
         return 9
     }
-*/
+
 } 
