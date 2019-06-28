@@ -67,10 +67,10 @@ namespace Insect {
     }
 /*
     //% subcategory="Radio"
-    //% blockId=setRadio block="radio group:0<=>83 %n"
+    //% blockId=setRadio block="radio groupGroup:0<=>83 %n"
     //% weight=85
     //% n.min=0 n.max=83
-    export function radio(n: number): void {
+    export function radioGroup(n: number): void {
         radio.setGroup(n)
     }
 */
