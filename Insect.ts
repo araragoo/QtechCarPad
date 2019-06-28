@@ -65,7 +65,7 @@ namespace Insect {
         else
             radio.sendString("b" + v)
     }
-
+/*
     //% subcategory="Radio"
     //% blockId=setRadio block="radio group:0<=>83 %n"
     //% weight=85
@@ -243,7 +243,7 @@ namespace Insect {
     export function P2(): number {
         return p2Count
     }
-/*
+
     //% subcategory="Music1"
     //% blockId=setMusicF block="musicF No.0<=>9 %n"
     //% weight=85
@@ -395,7 +395,7 @@ namespace Insect {
     //% subcategory="Music2"
     //% blockId=setPowerUp block="powerUp"
     //% weight=85
-    export function powerUpl(): number {
+    export function powerUp(): number {
         return 8
     }
 
