@@ -499,5 +499,4 @@ namespace Insect {
     export function powerDown(): number {
         return 9
     }
-
 } 
