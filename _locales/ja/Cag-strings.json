@@ -1,5 +1,5 @@
 {
-	"Insect|block": "昆虫ロボット",
+	"Cag|block": "昆虫ロボット",
 	"{id:subcategory}Move": "動き",
 	"{id:subcategory}Switch": "スイッチ、無線",
 	"{id:subcategory}LCD": "文字表示、傾斜",
