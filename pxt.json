@@ -1,5 +1,5 @@
 {
-    "name": "Insect",
+    "name": "Cag",
     "version": "0.0.0",
     "description": "Extension for DRV8830 Motor Driver",
     "license": "Ara",
@@ -8,8 +8,8 @@
     },
     "files": [
         "README.md",
-        "Insect.ts",
-        "_locales/ja/Insect-strings.json"
+        "Cag.ts",
+        "_locales/ja/Cag-strings.json"
     ],
     "testFiles": [
         "test.ts"
