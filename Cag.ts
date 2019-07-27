@@ -1,7 +1,7 @@
 // https://github.com/araragoo/QTechCag
 
 //% weight=5 color=#0fbc11 icon="\uf112" block="Insect"
-namespace Insect {
+namespace Cag {
 
     let initialized = false
 
