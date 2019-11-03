@@ -120,7 +120,7 @@ namespace Cag {
         return rotation_y
     }
 
-/*
+
 
     //% subcategory="Move"
     //% blockId=setFwds block="WalkFwd (2sec) times:1<=>10[cycle] %times"
@@ -129,7 +129,7 @@ namespace Cag {
         radio.sendString("M" + 1 + times)
         basic.pause(2000)
     }
-
+/*
     //%  subcategory="Move"
     //% blockId=setBwds block="WalkBwd (2sec) times:1<=>10[cycle] %times"
     //% times.min=1 times.max=10 times.defl=1
