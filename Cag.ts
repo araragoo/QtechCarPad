@@ -10,7 +10,7 @@ namespace Cag {
 
     let rotation_x = 0
     let rotation_y = 0
-    let distance = 0
+    let distanceData = 0
 
     let aCount  = 0
     let bCount  = 0
@@ -39,7 +39,7 @@ namespace Cag {
                     if (",".compare(receivedString.charAt(n)))
                         break;
                 }
-                distance = parseFloat(receivedString.substr(1, n-1))
+                distanceData = parseFloat(receivedString.substr(1, n-1))
             }
         }
     )
@@ -125,7 +125,7 @@ namespace Cag {
     //% blockId=setFwds block="WalkFwd (2sec) times:1<=>10[cycle] %times"
     //% times.min=1 times.max=10 times.defl=1
     export function fwds(times: number): void {
-        radio.sendString("M" + 1 + times)
+        radio.sendString("M" + "1" + times)
         basic.pause(2000)
     }
 
@@ -133,7 +133,7 @@ namespace Cag {
     //% blockId=setBwds block="WalkBwd (2sec) times:1<=>10[cycle] %times"
     //% times.min=1 times.max=10 times.defl=1
     export function bwds(times: number): void {
-        radio.sendString("M" + 2 + times)
+        radio.sendString("M" + "2" + times)
         basic.pause(2000)
     }
 
@@ -141,7 +141,7 @@ namespace Cag {
     //% blockId=setRights block="WalkRight (2sec) times:1<=>10[cycle] %times"
     //% times.min=1 times.max=10 times.defl=1
     export function rights(times: number): void {
-        radio.sendString("M" + 3 + times)
+        radio.sendString("M" + "3" + times)
         basic.pause(2000)
     }
 
@@ -149,28 +149,28 @@ namespace Cag {
     //% blockId=setLefts block="WalkLeft (2sec) times:1<=>10[cycle] %times"
     //% times.min=1 times.max=10 times.defl=1
     export function lefts(times: number): void {
-        radio.sendString("M" + 4 + times)
+        radio.sendString("M" + "4" + times)
         basic.pause(2000)
     }
 
     //% subcategory="Move"
     //% blockId=setStops block="Stop (1sec)"
     export function stops(): void {
-        radio.sendString("M" + 0)
+        radio.sendString("M" + "0")
         basic.pause(1000)
     }
 
     //% subcategory="Move"
     //% blockId=setSitDowns block="Sit Down (1sec)"
     export function sitDowns(): void {
-        radio.sendString("M" + 5)
+        radio.sendString("M" + "5")
         basic.pause(1000)
     }
 
     //% subcategory="Move"
     //% blockId=setHappinesses block="Happiness (1sec)"
     export function happinesses(): void {
-        radio.sendString("M" + 6)
+        radio.sendString("M" + "6")
         basic.pause(1000)
     }
 
@@ -180,21 +180,21 @@ namespace Cag {
     //% blockId=setLEDred block="LED red Voltage:0<=>100 %v"
     //% v.min=0 v.max=100
     export function LEDred(): void {
-        radio.sendString("l" + 0 + v)
+        radio.sendString("l" + "0" + v)
     }
 
     //% subcategory="LED"
     //% blockId=setLEDgreen block="LED green Voltage:0<=>100 %v"
     //% v.min=0 v.max=100
     export function LEDgreen(): void {
-        radio.sendString("l" + 1 + v)
+        radio.sendString("l" + "1" + v)
     }
 
     //% subcategory="LED"
     //% blockId=setLEDblue block="LED blue Voltage:0<=>100 %v"
     //% v.min=0 v.max=100
     export function LEDblue(): void {
-        radio.sendString("l" + 2 + v)
+        radio.sendString("l" + "2" + v)
     }
 
 
@@ -244,8 +244,8 @@ namespace Cag {
 
     //% subcategory="Switch"
     //% blockId=swDistance block="Distance"
-    export function sensorDistance(): number {
-        return distance
+    export function distance(): number {
+        return distanceData
     }
 
 
