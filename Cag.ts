@@ -120,7 +120,7 @@ namespace Cag {
         return rotation_y
     }
 
-
+/*
 
     //% subcategory="Move"
     //% blockId=setFwds block="WalkFwd (2sec) times:1<=>10[cycle] %times"
@@ -249,7 +249,7 @@ namespace Cag {
         return distance
     }
 
-
+*/
 
     //% subcategory="Music1"
     //% blockId=setMusicF block="musicF No.0<=>9 %n"
