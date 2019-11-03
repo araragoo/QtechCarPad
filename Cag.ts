@@ -37,6 +37,7 @@ namespace Cag {
                 let n;
                 for (n = 0; n < 16; n++) {
                     if (",".compare(receivedString.charAt(n))
+                      break;
                 }
                 distance = parseFloat(receivedString.substr(1, n-1))
             }
