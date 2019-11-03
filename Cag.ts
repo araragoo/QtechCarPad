@@ -114,34 +114,40 @@ namespace Cag {
         return rotation_y
     }
 
-    //% subcategory="Move"
-    //% blockId=setStops block="Stop (1sec)"
-    export function stops(): void {
-        radio.sendString("M" + 0)
-    }
+
 
     //% subcategory="Move"
     //% blockId=setFwds block="WalkFwd (2sec) times[s]:1<=>10 %times"
+    //% times.min=1 times.max=10 times.defl=1
     export function fwds(times: number): void {
         radio.sendString("M" + 1 + times)
     }
 
     //%  subcategory="Move"
     //% blockId=setBwds block="WalkBwd (2sec) times[s]:1<=>10 %times"
-    export function bwds(): void {
+    //% times.min=1 times.max=10 times.defl=1
+    export function bwds(times: number): void {
         radio.sendString("M" + 2 + times)
     }
 
     //% subcategory="Move"
     //% blockId=setRights block="WalkRight (2sec) times[s]:1<=>10 %times"
-    export function rights(): void {
+    //% times.min=1 times.max=10 times.defl=1
+    export function rights(times: number): void {
         radio.sendString("M" + 3 + times)
     }
 
     //% subcategory="Move"
     //% blockId=setLefts block="WalkLeft (2sec) times[s]:1<=>10 %times"
-    export function lefts(): void {
+    //% times.min=1 times.max=10 times.defl=1
+    export function lefts(times: number): void {
         radio.sendString("M" + 4 + times)
+    }
+
+    //% subcategory="Move"
+    //% blockId=setStops block="Stop (1sec)"
+    export function stops(): void {
+        radio.sendString("M" + 0)
     }
 
     //% subcategory="Move"
