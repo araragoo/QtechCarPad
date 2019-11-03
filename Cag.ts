@@ -125,10 +125,10 @@ namespace Cag {
     //% blockId=setFwds block="WalkFwd (2sec) times:1<=>10[cycle] %times"
     //% times.min=1 times.max=10 times.defl=1
     export function fwds(times: number): void {
-        //radio.sendString("M" + 1 + times)
-        //basic.pause(2000)
+        radio.sendString("M" + 1 + times)
+        basic.pause(2000)
     }
-/*
+
     //%  subcategory="Move"
     //% blockId=setBwds block="WalkBwd (2sec) times:1<=>10[cycle] %times"
     //% times.min=1 times.max=10 times.defl=1
@@ -248,7 +248,7 @@ namespace Cag {
         return distance
     }
 
-*/
+
 
     //% subcategory="Music1"
     //% blockId=setMusicF block="musicF No.0<=>9 %n"
