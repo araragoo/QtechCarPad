@@ -22,6 +22,7 @@
 	"Cag.LEDred|block": "LED（赤）：電圧（0～100） %voltage",
 	"Cag.LEDgreen|block": "LED（緑）：電圧（0～100） %voltage",
 	"Cag.LEDblue|block": "LED（青）：電圧（0～100） %voltage",
+	"Cag.sensorDistance|block": "距離",
 	"Cag.musicF|block": "音楽１ No.0～9 %n",
 	"Cag.dadadum|block": "ダダダム",
 	"Cag.entertainer|block": "ジ・エンターテイナー",
