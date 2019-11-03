@@ -180,21 +180,21 @@ namespace Cag {
     //% blockId=setLEDred block="LED red Voltage:0<=>100 %voltage"
     //% voltage.min=0 voltage.max=100
     export function LEDred(): void {
-        radio.sendString("l" 0 + v)
+        radio.sendString("l" + 0 + v)
     }
 
     //% subcategory="LED"
     //% blockId=setLEDgreen block="LED green Voltage:0<=>100 %voltage"
     //% voltage.min=0 voltage.max=100
     export function LEDgreen(): void {
-        radio.sendString("l" 1 + v)
+        radio.sendString("l" + 1 + v)
     }
 
     //% subcategory="LED"
     //% blockId=setLEDblue block="LED blue Voltage:0<=>100 %voltage"
     //% voltage.min=0 voltage.max=100
     export function LEDblue(): void {
-        radio.sendString("l" 2 + v)
+        radio.sendString("l" + 2 + v)
     }
 
 
