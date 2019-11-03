@@ -179,22 +179,22 @@ namespace Cag {
     //% subcategory="LED"
     //% blockId=setLEDred block="LED red Voltage:0<=>100 %v"
     //% v.min=0 v.max=100
-    export function LEDred(): void {
-        radio.sendString("l" + "0" + convertToText(v))
+    export function LEDred(v: number): void {
+        radio.sendString("l" + "0" + v)
     }
 
     //% subcategory="LED"
     //% blockId=setLEDgreen block="LED green Voltage:0<=>100 %v"
     //% v.min=0 v.max=100
-    export function LEDgreen(): void {
-        radio.sendString("l" + "1" + convertToText(v))
+    export function LEDgreen(v: number): void {
+        radio.sendString("l" + "1" + v)
     }
 
     //% subcategory="LED"
     //% blockId=setLEDblue block="LED blue Voltage:0<=>100 %v"
     //% v.min=0 v.max=100
-    export function LEDblue(): void {
-        radio.sendString("l" + "2" + convertToText(v))
+    export function LEDblue(v: number): void {
+        radio.sendString("l" + "2" + v)
     }
 
 
@@ -254,7 +254,7 @@ namespace Cag {
     //% blockId=setMusicF block="musicF No.0<=>9 %n"
     //% n.min=0 n.max=9
     export function musicF(n: number): void {
-        radio.sendString("s" + convertToText(n))
+        radio.sendString("s" + n)
     }
 
     //% subcategory="Music1"
@@ -321,7 +321,7 @@ namespace Cag {
     //% blockId=setMusicS block="musicS No.0<=>9 %n"
     //% n.min=0 n.max=9
     export function musicS(n: number): void {
-        radio.sendString("p" + convertToText(n))
+        radio.sendString("p" + n)
     }
 
     //% subcategory="Music2"
