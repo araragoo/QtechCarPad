@@ -64,8 +64,8 @@ namespace Cag {
         radio.sendString("d" + "2" + text)
     }
 
-    // subcategory="LCD"
-    // blockId=setRotX block="rotation X:0<=>5"
+    //% subcategory="LCD"
+    //% blockId=setRotX block="rotation X:0<=>5"
     export function rotX(): number {
         let x
         x = input.rotation(Rotation.Roll)
@@ -92,8 +92,8 @@ namespace Cag {
         return rotation_x
     }
 
-    // subcategory="LCD"
-    // blockId=setRotY block="rotation Y:0<=>5"
+    //% subcategory="LCD"
+    //% blockId=setRotY block="rotation Y:0<=>5"
     export function rotY(): number {
         let y
         y = input.rotation(Rotation.Pitch)
@@ -123,7 +123,7 @@ namespace Cag {
 
 
     //% subcategory="Move"
-    //% blockId=setFwds block="WalkFwd (2sec) times[s]:1<=>10 %times"
+    //% blockId=setFwds block="WalkFwd (2sec) times[cycle]:1<=>10 %times"
     //% times.min=1 times.max=10 times.defl=1
     export function fwds(times: number): void {
         radio.sendString("M" + 1 + times)
@@ -131,7 +131,7 @@ namespace Cag {
     }
 
     //%  subcategory="Move"
-    //% blockId=setBwds block="WalkBwd (2sec) times[s]:1<=>10 %times"
+    //% blockId=setBwds block="WalkBwd (2sec) times[cycle]:1<=>10 %times"
     //% times.min=1 times.max=10 times.defl=1
     export function bwds(times: number): void {
         radio.sendString("M" + 2 + times)
@@ -139,7 +139,7 @@ namespace Cag {
     }
 
     //% subcategory="Move"
-    //% blockId=setRights block="WalkRight (2sec) times[s]:1<=>10 %times"
+    //% blockId=setRights block="WalkRight (2sec) times[cycle]:1<=>10 %times"
     //% times.min=1 times.max=10 times.defl=1
     export function rights(times: number): void {
         radio.sendString("M" + 3 + times)
@@ -147,7 +147,7 @@ namespace Cag {
     }
 
     //% subcategory="Move"
-    //% blockId=setLefts block="WalkLeft (2sec) times[s]:1<=>10 %times"
+    //% blockId=setLefts block="WalkLeft (2sec) times[cycle]:1<=>10 %times"
     //% times.min=1 times.max=10 times.defl=1
     export function lefts(times: number): void {
         radio.sendString("M" + 4 + times)
