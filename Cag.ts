@@ -38,7 +38,7 @@ namespace Cag {
                 for (n = 0; n < 16; n++) {
                     if (",".compare(receivedString.charAt(n))
                 }
-                distance parseFloat(receivedString.substr(1, n-1))
+                distance = parseFloat(receivedString.substr(1, n-1))
             }
         }
     )
