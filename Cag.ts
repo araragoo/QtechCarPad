@@ -102,9 +102,9 @@ namespace Cag {
         radio.sendString("l" + "2" + text)
     }
 
-    //% subcategory="LCD"
-    //% blockId=setRotX block="rotation X:0<=>5"
-    //% weight=85
+    // subcategory="LCD"
+    // blockId=setRotX block="rotation X:0<=>5"
+    // weight=85
     export function rotX(): number {
         let x
         x = input.rotation(Rotation.Roll)
@@ -131,9 +131,9 @@ namespace Cag {
         return rotation_x
     }
 
-    //% subcategory="LCD"
-    //% blockId=setRotY block="rotation Y:0<=>5"
-    //% weight=85
+    // subcategory="LCD"
+    // blockId=setRotY block="rotation Y:0<=>5"
+    // weight=85
     export function rotY(): number {
         let y
         y = input.rotation(Rotation.Pitch)
