@@ -123,7 +123,7 @@ namespace Cag {
 
 
     //% subcategory="Move"
-    //% blockId=setFwds block="WalkFwd (2sec) times[cycle]:1<=>10 %times"
+    //% blockId=setFwds block="WalkFwd (2sec) times:1<=>10[cycle] %times"
     //% times.min=1 times.max=10 times.defl=1
     export function fwds(times: number): void {
         radio.sendString("M" + 1 + times)
@@ -131,7 +131,7 @@ namespace Cag {
     }
 
     //%  subcategory="Move"
-    //% blockId=setBwds block="WalkBwd (2sec) times[cycle]:1<=>10 %times"
+    //% blockId=setBwds block="WalkBwd (2sec) times:1<=>10[cycle] %times"
     //% times.min=1 times.max=10 times.defl=1
     export function bwds(times: number): void {
         radio.sendString("M" + 2 + times)
@@ -139,7 +139,7 @@ namespace Cag {
     }
 
     //% subcategory="Move"
-    //% blockId=setRights block="WalkRight (2sec) times[cycle]:1<=>10 %times"
+    //% blockId=setRights block="WalkRight (2sec) times:1<=>10[cycle] %times"
     //% times.min=1 times.max=10 times.defl=1
     export function rights(times: number): void {
         radio.sendString("M" + 3 + times)
@@ -147,7 +147,7 @@ namespace Cag {
     }
 
     //% subcategory="Move"
-    //% blockId=setLefts block="WalkLeft (2sec) times[cycle]:1<=>10 %times"
+    //% blockId=setLefts block="WalkLeft (2sec) times:1<=>10[cycle] %times"
     //% times.min=1 times.max=10 times.defl=1
     export function lefts(times: number): void {
         radio.sendString("M" + 4 + times)
