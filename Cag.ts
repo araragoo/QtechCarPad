@@ -10,6 +10,7 @@ namespace Cag {
 
     let rotation_x = 0
     let rotation_y = 0
+    let distance = 0
 
     let aCount  = 0
     let bCount  = 0
@@ -32,8 +33,13 @@ namespace Cag {
                 p1Count += 1
             } else if ("p2".compare(receivedString.substr(0, 2)) == 0) {
                 p2Count += 1
+            } else if ("d".compare(receivedString.charAt(0)) == 0) {
+                let n;
+                for (n = 0; n < 16; n++) {
+                    if (",".compare(receivedString.charAt(n))
+                }
+                distance parseFloat(receivedString.substr(1, n-1))
             }
-
         }
     )
 
@@ -121,6 +127,7 @@ namespace Cag {
     //% times.min=1 times.max=10 times.defl=1
     export function fwds(times: number): void {
         radio.sendString("M" + 1 + times)
+        basic.pause(2000)
     }
 
     //%  subcategory="Move"
@@ -128,6 +135,7 @@ namespace Cag {
     //% times.min=1 times.max=10 times.defl=1
     export function bwds(times: number): void {
         radio.sendString("M" + 2 + times)
+        basic.pause(2000)
     }
 
     //% subcategory="Move"
@@ -135,6 +143,7 @@ namespace Cag {
     //% times.min=1 times.max=10 times.defl=1
     export function rights(times: number): void {
         radio.sendString("M" + 3 + times)
+        basic.pause(2000)
     }
 
     //% subcategory="Move"
@@ -142,24 +151,28 @@ namespace Cag {
     //% times.min=1 times.max=10 times.defl=1
     export function lefts(times: number): void {
         radio.sendString("M" + 4 + times)
+        basic.pause(2000)
     }
 
     //% subcategory="Move"
     //% blockId=setStops block="Stop (1sec)"
     export function stops(): void {
         radio.sendString("M" + 0)
+        basic.pause(1000)
     }
 
     //% subcategory="Move"
     //% blockId=setSitDowns block="Sit Down (1sec)"
     export function sitDowns(): void {
         radio.sendString("M" + 5 + times)
+        basic.pause(1000)
     }
 
     //% subcategory="Move"
     //% blockId=setHappinesses block="Happiness (1sec)"
     export function happinesses(): void {
         radio.sendString("M" + 6 + times)
+        basic.pause(1000)
     }
 
 
@@ -228,6 +241,12 @@ namespace Cag {
     //% blockId=swP2 block="P2"
     export function P2(): number {
         return p2Count
+    }
+
+    //% subcategory="Switch"
+    //% blockId=swDistance block="Distance"
+    export function sensorDistance(): number {
+        return distance
     }
 
     //% subcategory="Music1"
