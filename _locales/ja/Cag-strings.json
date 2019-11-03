@@ -1,5 +1,5 @@
 {
-	"Cag|block": "昆虫ロボット",
+	"Cag|block": "いぬ・ねこロボット",
 	"{id:subcategory}Move": "動き",
 	"{id:subcategory}Switch": "スイッチ、無線、距離",
 	"{id:subcategory}LCD": "文字表示",
@@ -20,7 +20,7 @@
 	"Insect.sitDowns|block": "おすわり（1秒）",
 	"Insect.happinesses|block": "ふせ（1秒）",
 	"Insect.LEDred|block": "LED（赤）：電圧（0～100%） %voltage",
-	"Insect.LEDyellow|block": "LED（緑）：電圧（0～100%） %voltage",
+	"Insect.LEDgreen|block": "LED（緑）：電圧（0～100%） %voltage",
 	"Insect.LEDblue|block": "LED（青）：電圧（0～100%） %voltage",
 	"Insect.musicF|block": "音楽１ No.0～9 %n",
 	"Insect.dadadum|block": "ダダダム",
