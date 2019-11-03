@@ -163,36 +163,36 @@ namespace Cag {
     //% subcategory="Move"
     //% blockId=setSitDowns block="Sit Down (1sec)"
     export function sitDowns(): void {
-        radio.sendString("M" + 5 + times)
+        radio.sendString("M" + 5)
         basic.pause(1000)
     }
 
     //% subcategory="Move"
     //% blockId=setHappinesses block="Happiness (1sec)"
     export function happinesses(): void {
-        radio.sendString("M" + 6 + times)
+        radio.sendString("M" + 6)
         basic.pause(1000)
     }
 
 
 
     //% subcategory="LED"
-    //% blockId=setLEDred block="LED red Voltage:0<=>100 %voltage"
-    //% voltage.min=0 voltage.max=100
+    //% blockId=setLEDred block="LED red Voltage:0<=>100 %v"
+    //% v.min=0 v.max=100
     export function LEDred(): void {
         radio.sendString("l" + 0 + v)
     }
 
     //% subcategory="LED"
-    //% blockId=setLEDgreen block="LED green Voltage:0<=>100 %voltage"
-    //% voltage.min=0 voltage.max=100
+    //% blockId=setLEDgreen block="LED green Voltage:0<=>100 %v"
+    //% v.min=0 v.max=100
     export function LEDgreen(): void {
         radio.sendString("l" + 1 + v)
     }
 
     //% subcategory="LED"
-    //% blockId=setLEDblue block="LED blue Voltage:0<=>100 %voltage"
-    //% voltage.min=0 voltage.max=100
+    //% blockId=setLEDblue block="LED blue Voltage:0<=>100 %v"
+    //% v.min=0 v.max=100
     export function LEDblue(): void {
         radio.sendString("l" + 2 + v)
     }
