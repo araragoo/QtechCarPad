@@ -125,7 +125,7 @@ namespace Cag {
     //% blockId=setFwds block="WalkFwd (2sec) times:1<=>10[cycle] %times"
     //% times.min=1 times.max=10 times.defl=1
     export function fwds(times: number): void {
-        radio.sendString("M" + "1" + times)
+        radio.sendString("M" + "1" + times + ",")
         basic.pause(2000)
     }
 
@@ -133,7 +133,7 @@ namespace Cag {
     //% blockId=setBwds block="WalkBwd (2sec) times:1<=>10[cycle] %times"
     //% times.min=1 times.max=10 times.defl=1
     export function bwds(times: number): void {
-        radio.sendString("M" + "2" + times)
+        radio.sendString("M" + "2" + times + ",")
         basic.pause(2000)
     }
 
@@ -141,7 +141,7 @@ namespace Cag {
     //% blockId=setRights block="WalkRight (2sec) times:1<=>10[cycle] %times"
     //% times.min=1 times.max=10 times.defl=1
     export function rights(times: number): void {
-        radio.sendString("M" + "3" + times)
+        radio.sendString("M" + "3" + times + ",")
         basic.pause(2000)
     }
 
@@ -149,7 +149,7 @@ namespace Cag {
     //% blockId=setLefts block="WalkLeft (2sec) times:1<=>10[cycle] %times"
     //% times.min=1 times.max=10 times.defl=1
     export function lefts(times: number): void {
-        radio.sendString("M" + "4" + times)
+        radio.sendString("M" + "4" + times + ",")
         basic.pause(2000)
     }
 
@@ -180,21 +180,21 @@ namespace Cag {
     //% blockId=setLEDred block="LED red Voltage:0<=>100 %v"
     //% v.min=0 v.max=100
     export function LEDred(v: number): void {
-        radio.sendString("l" + "0" + v)
+        radio.sendString("l" + "0" + v + ",")
     }
 
     //% subcategory="LED"
     //% blockId=setLEDgreen block="LED green Voltage:0<=>100 %v"
     //% v.min=0 v.max=100
     export function LEDgreen(v: number): void {
-        radio.sendString("l" + "1" + v)
+        radio.sendString("l" + "1" + v + ",")
     }
 
     //% subcategory="LED"
     //% blockId=setLEDblue block="LED blue Voltage:0<=>100 %v"
     //% v.min=0 v.max=100
     export function LEDblue(v: number): void {
-        radio.sendString("l" + "2" + v)
+        radio.sendString("l" + "2" + v + ",")
     }
 
 
