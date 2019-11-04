@@ -117,17 +117,17 @@ namespace Cag {
     }
 
     //% subcategory="Move"
-    //% blockId=setFwds block="WalkFwd (2sec) times:1<=>10[cycle] %times"
-    //% times.min=1 times.max=10 times.defl=1
-    export function fwds(times: number): void {
-        radio.sendString("M" + "1" + times + ",")
+    //% blockId=setFwds block="WalkFwd (2sec) cycle:1<=>10[cycle] %cycle"
+    //% cycle.min=1 cycle.max=10 cycle.defl=1
+    export function fwds(cycle: number): void {
+        radio.sendString("M" + "1" + cycle + ",")
         basic.pause(2000)
     }
 
     //%  subcategory="Move"
-    //% blockId=setBwds block="WalkBwd (2sec) times:1<=>10[cycle] %times"
-    //% times.min=1 times.max=10 times.defl=1
-    export function bwds(times: number): void {
+    //% blockId=setBwds block="WalkBwd (2sec) cycle:1<=>10[cycle] %cycle"
+    //% cycle.min=1 cycle.max=10 cycle.defl=1
+    export function bwds(cycle: number): void {
         radio.sendString("M" + "2" + times + ",")
         basic.pause(2000)
     }
