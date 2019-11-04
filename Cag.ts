@@ -34,12 +34,7 @@ namespace Cag {
             } else if ("p2".compare(receivedString.substr(0, 2)) == 0) {
                 p2Count += 1
             } else if ("d".compare(receivedString.charAt(0)) == 0) {
-                let n;
-                for (n = 0; n < 16; n++) {
-                    if (",".compare(receivedString.charAt(n)))
-                        break;
-                }
-                distanceData = parseFloat(receivedString.substr(1, n-1))
+                distanceData = parseFloat(receivedString.substr(1, receivedString.length-1))
             }
         }
     )
