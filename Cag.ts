@@ -246,9 +246,9 @@ namespace Cag {
 
 
     //% subcategory="Music"
-    //% blockId=setMusicF block="Music 0:dog 1:cat %n"
+    //% blockId=setMusicCag block="Music 0:dog 1:cat %n"
     //% n.min=0 n.max=1
-    export function music(n: number): void {
+    export function musicCag(n: number): void {
         radio.sendString("s" + n)
     }
 
