@@ -253,30 +253,10 @@ namespace Cag {
 
     //% subcategory="Pad"
     //% blockId=setDispSlope block="Display LED for Slope X, Y"
-    export function rotY(): number {
-        let y
-        y = input.rotation(Rotation.Pitch)
-        y = y / 10
-        y = y + 2
-        if (y < 1) {
-            y = 0
-        } else {
-            if (y < 2) {
-                y = 1
-            } else {
-                if (y < 3) {
-                    y = 2
-                } else {
-                    if (y < 4) {
-                        y = 3
-                    } else {
-                        y = 4
-                    }
-                }
-            }
-        }
-        rotation_y = y
-        return rotation_y
+    export function dispLED() {
+        basic.clearScreen()
+         led.plot(0, 0)
+rotX()
     }
 
 
