@@ -4,8 +4,8 @@
 	"{id:subcategory}Switch": "スイッチ、無線、距離",
 	"{id:subcategory}LCD": "文字表示、傾き",
 	"{id:subcategory}LED": "光",
+	"{id:subcategory}Pad": "コントローラ",
 	"{id:subcategory}Music": "音楽",
-	"Cag.radioGroup|block": "無線グループ：No, 1～83 %n",
 	"Cag.showLiens|block": "全行の文字列 %text",
 	"Cag.showLine1|block": "1行の文字列 %text",
 	"Cag.showLine2|block": "2行の文字列 %text",
@@ -22,5 +22,10 @@
 	"Cag.LEDgreen|block": "LED（緑）：電圧（0～100） %v",
 	"Cag.LEDblue|block": "LED（青）：電圧（0～100） %v",
 	"Cag.distance|block": "距離（cm）",
-	"Cag.musicCag|block": "音楽　0:いぬ　1:ねこ　%n"
+	"Cag.musicDog|block": "いぬの歌",
+        "Cag.musicCat|block": "ねこの歌",
+	"Cag.radioGroup|block": "無線グループ：No, 1～83 %n",
+	"Cag.rotX|block": "傾き（左右）：-2～0～ 2",
+        "Cag.rotY|block": "傾き（前後）： 2～0～-2",
+        "Cag.dispSlope|block": "傾き表示（LED）"
 }
