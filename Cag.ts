@@ -41,27 +41,6 @@ namespace Cag {
 
 
 
-    //% subcategory="LCD"
-    //% blockId="show_lines"
-    //% block="show lines %text"
-    export function showLiens(text: string): void {
-        radio.sendString("d" + "0" + text)
-    }
-
-    //% subcategory="LCD"
-    //% blockId="show_line_1"
-    //% block="show line1 %text"
-    export function showLine1(text: string): void {
-        radio.sendString("d" + "1" + text)
-    }
-
-    //% subcategory="LCD"
-    //% blockId="show_line_2"
-    //% block="show line2 %text"
-    export function showLine2(text: string): void {
-        radio.sendString("d" + "2" + text)
-    }
-
     //% subcategory="Move"
     //% blockId=setFwds block="WalkFwd (2sec) cycle:1<=>10[cycle] %cycle"
     //% cycle.min=1 cycle.max=10 cycle.defl=1
@@ -182,6 +161,29 @@ namespace Cag {
     //% blockId=swDistance block="Distance(cm)"
     export function distance(): number {
         return distanceData
+    }
+
+
+
+    //% subcategory="LCD"
+    //% blockId="show_lines"
+    //% block="show lines %text"
+    export function showLiens(text: string): void {
+        radio.sendString("d" + "0" + text)
+    }
+
+    //% subcategory="LCD"
+    //% blockId="show_line_1"
+    //% block="show line1 %text"
+    export function showLine1(text: string): void {
+        radio.sendString("d" + "1" + text)
+    }
+
+    //% subcategory="LCD"
+    //% blockId="show_line_2"
+    //% block="show line2 %text"
+    export function showLine2(text: string): void {
+        radio.sendString("d" + "2" + text)
     }
 
 
