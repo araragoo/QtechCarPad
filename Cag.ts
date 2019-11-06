@@ -39,6 +39,8 @@ namespace Cag {
         }
     )
 
+
+
     //% subcategory="LCD"
     //% blockId="show_lines"
     //% block="show lines %text"
@@ -58,62 +60,6 @@ namespace Cag {
     //% block="show line2 %text"
     export function showLine2(text: string): void {
         radio.sendString("d" + "2" + text)
-    }
-
-    //% subcategory="LCD"
-    //% blockId=setRotX block="rotation X:0<=>5"
-    export function rotX(): number {
-        let x
-        x = input.rotation(Rotation.Roll)
-        x = x / 10
-        x = x + 2
-        if (x < 1) {
-            x = 0
-        } else {
-            if (x < 2) {
-                x = 1
-            } else {
-                if (x < 3) {
-                    x = 2
-                } else {
-                    if (x < 4) {
-                        x = 3
-                    } else {
-                        x = 4
-                    }
-                }
-            }
-        }
-        rotation_x = x
-        return rotation_x
-    }
-
-    //% subcategory="LCD"
-    //% blockId=setRotY block="rotation Y:0<=>5"
-    export function rotY(): number {
-        let y
-        y = input.rotation(Rotation.Pitch)
-        y = y / 10
-        y = y + 2
-        if (y < 1) {
-            y = 0
-        } else {
-            if (y < 2) {
-                y = 1
-            } else {
-                if (y < 3) {
-                    y = 2
-                } else {
-                    if (y < 4) {
-                        y = 3
-                    } else {
-                        y = 4
-                    }
-                }
-            }
-        }
-        rotation_y = y
-        return rotation_y
     }
 
     //% subcategory="Move"
@@ -195,13 +141,6 @@ namespace Cag {
 
 
     //% subcategory="Switch"
-    //% blockId=setRadio block="radio Group:1<=>83 %n"
-    //% n.min=1 n.max=83 n.defl=1
-    export function radioGroup(n: number): void {
-        radio.setGroup(n)
-    }
-
-    //% subcategory="Switch"
     //% blockId=swA block="A"
     export function A(): number {
         return aCount
@@ -237,10 +176,107 @@ namespace Cag {
         return p2Count
     }
 
+
+
     //% subcategory="Switch"
-    //% blockId=swDistance block="Distance"
+    //% blockId=swDistance block="Distance(cm)"
     export function distance(): number {
         return distanceData
+    }
+
+
+
+    //% subcategory="Pad"
+    //% blockId=setRadio block="radio Group:1<=>83 %n"
+    //% n.min=1 n.max=83 n.defl=1
+    export function radioGroup(n: number): void {
+        radio.setGroup(n)
+    }
+
+    //% subcategory="Pad"
+    //% blockId=setRotX block="rotation X:-2<=0=>2"
+    export function rotX(): number {
+        let x
+        x = input.rotation(Rotation.Roll)
+        x = x / 10
+        x = x + 0
+        if (x < -1) {
+            x = -2
+        } else {
+            if (x < 0) {
+                x = -1
+            } else {
+                if (x < 1) {
+                    x = 0
+                } else {
+                    if (x < 2) {
+                        x = 1
+                    } else {
+                        x = 2
+                    }
+                }
+            }
+        }
+        rotation_x = x
+        return rotation_x
+    }
+
+    //% subcategory="Pad"
+    //% blockId=setRotY block="rotation Y:-2<=0=>2"
+    export function rotY(): number {
+        let y
+        y = input.rotation(Rotation.Pitch)
+        y = y / 10
+        y = y
+        if (y < -1) {
+            y = -2
+        } else {
+            if (y < 0) {
+                y = -1
+            } else {
+                if (y < 1) {
+                    y = 0
+                } else {
+                    if (y < 2) {
+                        y = 1
+                    } else {
+                        y = 2
+                    }
+                }
+            }
+        }
+        rotation_y = y
+        return rotation_y
+    }
+
+
+
+    //% subcategory="Pad"
+    //% blockId=setDispSlope block="Display LED for Slope X, Y"
+    export function rotY(): number {
+        let y
+        y = input.rotation(Rotation.Pitch)
+        y = y / 10
+        y = y + 2
+        if (y < 1) {
+            y = 0
+        } else {
+            if (y < 2) {
+                y = 1
+            } else {
+                if (y < 3) {
+                    y = 2
+                } else {
+                    if (y < 4) {
+                        y = 3
+                    } else {
+                        y = 4
+                    }
+                }
+            }
+        }
+        rotation_y = y
+        return rotation_y
     }
 
 
