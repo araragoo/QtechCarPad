@@ -22,6 +22,6 @@
 	"Cag.LEDred|block": "LED（赤）：電圧（0～100） %v",
 	"Cag.LEDgreen|block": "LED（緑）：電圧（0～100） %v",
 	"Cag.LEDblue|block": "LED（青）：電圧（0～100） %v",
-	"Cag.distance|block": "距離",
+	"Cag.distance|block": "距離（cm）",
 	"Cag.musicCag|block": "音楽　0:いぬ　1:ねこ　%n"
 }
