@@ -120,6 +120,14 @@ namespace Cag {
 
 
     //% subcategory="Switch"
+    //% blockId=swDistance block="Distance(cm)"
+    export function distance(): number {
+        return distanceData
+    }
+
+
+
+    //% subcategory="Switch"
     //% blockId=swA block="A"
     export function A(): number {
         return aCount
@@ -153,14 +161,6 @@ namespace Cag {
     //% blockId=swP2 block="P2"
     export function P2(): number {
         return p2Count
-    }
-
-
-
-    //% subcategory="Switch"
-    //% blockId=swDistance block="Distance(cm)"
-    export function distance(): number {
-        return distanceData
     }
 
 
