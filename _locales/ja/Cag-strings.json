@@ -1,10 +1,10 @@
 {
 	"Cag|block": "いぬ・ねこロボット",
 	"{id:subcategory}Move": "動き",
-	"{id:subcategory}Switch": "スイッチ、無線、距離",
-	"{id:subcategory}LCD": "文字表示、傾き",
+	"{id:subcategory}Switch": "スイッチ、距離",
+	"{id:subcategory}LCD": "文字表示",
 	"{id:subcategory}LED": "光",
-	"{id:subcategory}Pad": "コントローラ",
+	"{id:subcategory}Pad": "コントローラ（無線、傾き）",
 	"{id:subcategory}Music": "音楽",
 	"Cag.showLiens|block": "全行の文字列 %text",
 	"Cag.showLine1|block": "1行の文字列 %text",
