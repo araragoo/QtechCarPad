@@ -186,6 +186,20 @@ namespace Cag {
 
 
 
+    //% subcategory="Music"
+    //% blockId=setMusicDog block="Dog's song"
+    export function musicDog(n: number): void {
+        radio.sendString("s0")
+    }
+
+    //% subcategory="Music"
+    //% blockId=setMusicCat block="Cat's song"
+    export function musicCat(n: number): void {
+        radio.sendString("s1")
+    }
+
+
+
     //% subcategory="Pad"
     //% blockId=setRadio block="radio Group:1<=>83 %n"
     //% n.min=1 n.max=83 n.defl=1
@@ -253,18 +267,9 @@ namespace Cag {
 
     //% subcategory="Pad"
     //% blockId=setDispSlope block="Display LED for Slope X, Y"
-    export function dispLED() {
+    export function dispSlope() {
         basic.clearScreen()
         led.plot(rotX()+2, rotY()+2)
     }
 
-
-
-    //% subcategory="Music"
-    //% blockId=setMusicCag block="Music 0:dog 1:cat %n"
-    //% n.min=0 n.max=1
-    export function musicCag(n: number): void {
-        radio.sendString("s" + n)
-    }
-
-} 
+}
