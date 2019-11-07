@@ -96,6 +96,50 @@ namespace Cag {
 
 
 
+    //% subcategory="Motor"
+    //% blockId=setMotorW block="Servo Waist degree:-90<=>90 %degree"
+    //% degree.min=-90 degree.max=90
+    export function ServoW(degree: number): void {
+        radio.sendString("m" + "0" + degree)
+    }
+
+    //% subcategory="Motor"
+    //% blockId=setMotorFR block="Servo Front Right degree:-90<=>90 %degree"
+    //% degree.min=-90 degree.max=90
+    export function ServoFR(degree: number): void {
+        radio.sendString("m" + "1" + degree)
+    }
+
+    //% subcategory="Motor"
+    //% blockId=setMotorFL block="Servo Front Left degree:-90<=>90 %degree"
+    //% degree.min=-90 degree.max=90
+    export function ServoFL(degree: number): void {
+        radio.sendString("m" + "2" + degree)
+    }
+
+    //% subcategory="Motor"
+    //% blockId=setMotorRR block="Servo Rear Right degree:-90<=>90 %degree"
+    //% degree.min=-90 degree.max=90
+    export function ServoRR(degree: number): void {
+        radio.sendString("m" + "3" + degree)
+    }
+
+    //% subcategory="Motor"
+    //% blockId=setMotorRL block="Servo Rear Left degree:-90<=>90 %degree"
+    //% degree.min=-90 degree.max=90
+    export function ServoRL(degree: number): void {
+        radio.sendString("m" + "4" + degree)
+    }
+
+    //% subcategory="Motor"
+    //% blockId=setMotorT block="Servo Time(sec):0.5<=>5 %t"
+    //% t.min=0.5 t.max=5
+    export function ServoT(t: number): void {
+        radio.sendString("t" + t)
+    }
+
+
+
     //% subcategory="LED"
     //% blockId=setLEDred block="LED red Voltage:0<=>100 %v"
     //% v.min=0 v.max=100
