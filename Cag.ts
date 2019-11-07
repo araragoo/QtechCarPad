@@ -227,13 +227,13 @@ namespace Cag {
 
     //% subcategory="Music"
     //% blockId=setMusicDog block="Dog's song"
-    export function musicDog(n: number): void {
+    export function musicDog(): void {
         radio.sendString("s0")
     }
 
     //% subcategory="Music"
     //% blockId=setMusicCat block="Cat's song"
-    export function musicCat(n: number): void {
+    export function musicCat(): void {
         radio.sendString("s1")
     }
 
