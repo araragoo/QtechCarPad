@@ -107,7 +107,7 @@ namespace Cag {
     //% blockId=setMotorFR block="Servo Front Right degree:-90<=>90 %degree"
     //% degree.min=-90 degree.max=90
     export function ServoFR(degree: number): void {
-        radio.sendString("m" + "1" + degree)
+        radio.sendString("m" + "1" + convertToText(degree))
     }
 
     //% subcategory="Motor"
