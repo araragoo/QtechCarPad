@@ -131,13 +131,6 @@ namespace Cag {
         radio.sendString("m" + "4" + degree)
     }
 
-    //% subcategory="Motor"
-    //% blockId=setMotorT block="Servo Time(sec):0.5<=>5 %t"
-    //% t.min=0.5 t.max=5
-    export function ServoT(t: number): void {
-        radio.sendString("t" + t)
-    }
-
 
 
     //% subcategory="LED"
