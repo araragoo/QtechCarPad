@@ -30,6 +30,6 @@
         "Cag.musicCat|block": "ねこの歌",
 	"Cag.radioGroup|block": "無線グループ：No, 1～83 %n",
 	"Cag.rotX|block": "傾き（左右）：-2～0～2",
-        "Cag.rotY|block": "傾き（前後）： 2～0～-2",
+        "Cag.rotY|block": "傾き（前後）：-2～0～2",
         "Cag.dispSlope|block": "傾き表示（LED）"
 }
