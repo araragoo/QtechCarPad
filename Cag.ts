@@ -46,7 +46,7 @@ namespace Cag {
     //% cycle.min=1 cycle.max=10 cycle.defl=1
     export function fwds(cycle: number): void {
         radio.sendString("M" + "1" + cycle)
-        basic.pause(2000 * cycle)
+        basic.pause(2500 * cycle)
     }
 
     //%  subcategory="Move"
@@ -54,7 +54,7 @@ namespace Cag {
     //% cycle.min=1 cycle.max=10 cycle.defl=1
     export function bwds(cycle: number): void {
         radio.sendString("M" + "2" + cycle)
-        basic.pause(2000 * cycle)
+        basic.pause(2500 * cycle)
     }
 
     //% subcategory="Move"
@@ -62,7 +62,7 @@ namespace Cag {
     //% cycle.min=1 cycle.max=10 cycle.defl=1
     export function rights(cycle: number): void {
         radio.sendString("M" + "3" + cycle)
-        basic.pause(2000 * cycle)
+        basic.pause(2500 * cycle)
     }
 
     //% subcategory="Move"
@@ -70,28 +70,28 @@ namespace Cag {
     //% cycle.min=1 cycle.max=10 cycle.defl=1
     export function lefts(cycle: number): void {
         radio.sendString("M" + "4" + cycle)
-        basic.pause(2000 * cycle)
+        basic.pause(2500 * cycle)
     }
 
     //% subcategory="Move"
     //% blockId=setStops block="Stop (1sec)"
     export function stops(): void {
         radio.sendString("M" + "0")
-        basic.pause(1000)
+        basic.pause(1500)
     }
 
     //% subcategory="Move"
     //% blockId=setSitDowns block="Sit Down (1sec)"
     export function sitDowns(): void {
         radio.sendString("M" + "5")
-        basic.pause(1000)
+        basic.pause(1500)
     }
 
     //% subcategory="Move"
     //% blockId=setHappinesses block="Happiness (1sec)"
     export function happinesses(): void {
         radio.sendString("M" + "6")
-        basic.pause(1000)
+        basic.pause(1500)
     }
 
 
