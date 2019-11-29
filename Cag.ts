@@ -308,7 +308,7 @@ namespace Cag {
     //% blockId=setDispSlope block="Display LED for Slope X, Y"
     export function dispSlope() {
         basic.clearScreen()
-        led.plot(rotX()+2, rotY()+2)
+        led.plot(rotX()+2, -rotY()+2)
     }
 
 }
