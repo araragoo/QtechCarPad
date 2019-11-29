@@ -46,7 +46,7 @@ namespace Cag {
     //% cycle.min=1 cycle.max=10 cycle.defl=1
     export function fwds(cycle: number): void {
         radio.sendString("M" + "1" + cycle)
-        basic.pause(2000)
+        basic.pause(2000 * cycle)
     }
 
     //%  subcategory="Move"
@@ -54,7 +54,7 @@ namespace Cag {
     //% cycle.min=1 cycle.max=10 cycle.defl=1
     export function bwds(cycle: number): void {
         radio.sendString("M" + "2" + cycle)
-        basic.pause(2000)
+        basic.pause(2000 * cycle)
     }
 
     //% subcategory="Move"
@@ -62,7 +62,7 @@ namespace Cag {
     //% cycle.min=1 cycle.max=10 cycle.defl=1
     export function rights(cycle: number): void {
         radio.sendString("M" + "3" + cycle)
-        basic.pause(2000)
+        basic.pause(2000 * cycle)
     }
 
     //% subcategory="Move"
@@ -70,7 +70,7 @@ namespace Cag {
     //% cycle.min=1 cycle.max=10 cycle.defl=1
     export function lefts(cycle: number): void {
         radio.sendString("M" + "4" + cycle)
-        basic.pause(2000)
+        basic.pause(2000 * cycle)
     }
 
     //% subcategory="Move"
