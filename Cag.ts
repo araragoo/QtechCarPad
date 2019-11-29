@@ -298,7 +298,7 @@ namespace Cag {
                 }
             }
         }
-        rotation_y = y
+        rotation_y = -y
         return rotation_y
     }
 
