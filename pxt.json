@@ -1,15 +1,15 @@
 {
     "name": "Cag",
     "version": "0.0.0",
-    "description": "Extension for DRV8830 Motor Driver",
+    "description": "Extension for Servo Motor Control",
     "license": "Ara",
     "dependencies": {
         "core": "*"
     },
     "files": [
         "README.md",
-        "Cag.ts",
-        "_locales/ja/Cag-strings.json"
+        "Car.ts",
+        "_locales/ja/Car-strings.json"
     ],
     "testFiles": [
         "test.ts"
