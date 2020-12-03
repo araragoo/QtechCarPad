@@ -131,7 +131,7 @@ namespace Car {
         if(speed > 0)
             radio.sendString("r" + "1" + "0" + convertToText(speed))
         else
-            radio.sendString("r" + "1" + "1" + convertToText(Math.abs(speed))
+            radio.sendString("r" + "1" + "1" + convertToText(Math.abs(speed)))
     }
 
 
