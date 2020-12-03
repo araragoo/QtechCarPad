@@ -54,7 +54,7 @@ namespace Car {
     //% speed.min=0 speed.max=90 speed.defl=0
     export function Fwd(speed: number): void {
         radio.sendString("r" + "0" + "1" + convertToText(speed))
-        radio.sendString("r" + "1" + "0" + convertToText(speed))
+//        radio.sendString("r" + "1" + "0" + convertToText(speed))
     }
 
     //% subcategory="Move"
@@ -121,7 +121,7 @@ namespace Car {
         if(speed > 0)
             radio.sendString("r" + "0" + "0" + convertToText( speed))
         else
-            radio.sendString("r" + "0" + "1" + convertToText(-speed))
+            radio.sendString("r" + "0" + "1" + convertToText(Math.abs(speed)))
     }
 
     //% subcategory="Motor"
@@ -129,9 +129,9 @@ namespace Car {
     //% speed.min=-90 speed.max=90
     export function MotorL(speed: number): void {
         if(speed > 0)
-            radio.sendString("r" + "1" + "0" + convertToText( speed))
+            radio.sendString("r" + "1" + "0" + convertToText(speed))
         else
-            radio.sendString("r" + "1" + "1" + convertToText(-speed))
+            radio.sendString("r" + "1" + "1" + convertToText(Math.abs(speed))
     }
 
 
