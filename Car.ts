@@ -1,7 +1,7 @@
-// https://github.com/araragoo/QTechCag
+// https://github.com/araragoo/QTechCarPad
 
 //% weight=5 color=#0fbc11 icon="\uf112" block="Insect"
-namespace Cag {
+namespace Car {
 
     let initialized = false
 
@@ -39,119 +39,106 @@ namespace Cag {
         }
     )
 
-
-
     //% subcategory="Move"
-    //% blockId=setFwds block="WalkFwd (2sec) cycle:1<=>10[cycle] %cycle"
-    //% cycle.min=1 cycle.max=10 cycle.defl=1
-    export function fwds(cycle: number): void {
-        radio.sendString("M" + "1" + cycle)
-        basic.pause(2500 * cycle)
-    }
-
-    //%  subcategory="Move"
-    //% blockId=setBwds block="WalkBwd (2sec) cycle:1<=>10[cycle] %cycle"
-    //% cycle.min=1 cycle.max=10 cycle.defl=1
-    export function bwds(cycle: number): void {
-        radio.sendString("M" + "2" + cycle)
-        basic.pause(2500 * cycle)
+    //% blockId=setRgtFwd block="RgtFwd speed:0<=>90 %speed"
+    //% speed.min=0 speed.max=90 speed.defl=0
+    export function RgtFwd(speed: number): void {
+        radio.sendString("r" + "0" + "1" + convertToText(speed / 2))
+        radio.sendString("r" + "1" + "0" + convertToText(speed))
     }
 
     //% subcategory="Move"
-    //% blockId=setRights block="WalkRight (2sec) cycle:1<=>10[cycle] %cycle"
-    //% cycle.min=1 cycle.max=10 cycle.defl=1
-    export function rights(cycle: number): void {
-        radio.sendString("M" + "3" + cycle)
-        basic.pause(2500 * cycle)
+    //% blockId=setFwd block="Fwd speed:0<=>90 %speed"
+    //% speed.min=0 speed.max=90 speed.defl=0
+    export function Fwd(speed: number): void {
+        radio.sendString("r" + "0" + "1" + convertToText(speed))
+        radio.sendString("r" + "1" + "0" + convertToText(speed))
     }
 
     //% subcategory="Move"
-    //% blockId=setLefts block="WalkLeft (2sec) cycle:1<=>10[cycle] %cycle"
-    //% cycle.min=1 cycle.max=10 cycle.defl=1
-    export function lefts(cycle: number): void {
-        radio.sendString("M" + "4" + cycle)
-        basic.pause(2500 * cycle)
+    //% blockId=setLftFwd block="LftFwd speed:0<=>90 %speed"
+    //% speed.min=0 speed.max=90 speed.defl=0
+    export function LftFwd(speed: number): void {
+        radio.sendString("r" + "0" + "1" + convertToText(speed))
+        radio.sendString("r" + "1" + "0" + convertToText(speed / 2))
     }
 
     //% subcategory="Move"
-    //% blockId=setStops block="Stop (1sec)"
-    export function stops(): void {
-        radio.sendString("M" + "0")
-        basic.pause(1500)
+    //% blockId=setRgt block="Rgt speed:0<=>90 %speed"
+    //% speed.min=0 speed.max=90 speed.defl=0
+    export function Rgt(speed: number): void {
+        radio.sendString("r" + "0" + "0" + convertToText(speed))
+        radio.sendString("r" + "1" + "0" + convertToText(speed))
     }
 
     //% subcategory="Move"
-    //% blockId=setSitDowns block="Sit Down (1sec)"
-    export function sitDowns(): void {
-        radio.sendString("M" + "5")
-        basic.pause(1500)
+    //% blockId=setStp block="Stp"
+    export function Stp(): void {
+        radio.sendString("r" + "0" + "0" + "0" )
+        radio.sendString("r" + "1" + "0" + "0" )
     }
 
     //% subcategory="Move"
-    //% blockId=setHappinesses block="Happiness (1sec)"
-    export function happinesses(): void {
-        radio.sendString("M" + "6")
-        basic.pause(1500)
+    //% blockId=setLft block="Lft speed:0<=>90 %speed"
+    //% speed.min=0 speed.max=90 speed.defl=0
+    export function Lft(speed: number): void {
+        radio.sendString("r" + "0" + "1" + convertToText(speed))
+        radio.sendString("r" + "1" + "1" + convertToText(speed))
+    }
+
+    //% subcategory="Move"
+    //% blockId=setRgtBwd block="RgtBwd speed:0<=>90 %speed"
+    //% speed.min=0 speed.max=90 speed.defl=0
+    export function BgtFwd(speed: number): void {
+        radio.sendString("r" + "0" + "0" + convertToText(speed / 2))
+        radio.sendString("r" + "1" + "1" + convertToText(speed))
+    }
+
+    //% subcategory="Move"
+    //% blockId=setBwd block="Bwd speed:0<=>90 %speed"
+    //% speed.min=0 speed.max=90 speed.defl=0
+    export function Bwd(speed: number): void {
+        radio.sendString("r" + "0" + "0" + convertToText(speed))
+        radio.sendString("r" + "1" + "1" + convertToText(speed))
+    }
+
+    //% subcategory="Move"
+    //% blockId=setLftBwd block="LftBwd speed:0<=>90 %speed"
+    //% speed.min=0 speed.max=90 speed.defl=0
+    export function LftBwd(speed: number): void {
+        radio.sendString("r" + "0" + "0" + convertToText(speed))
+        radio.sendString("r" + "1" + "1" + convertToText(speed / 2))
     }
 
 
 
     //% subcategory="Motor"
-    //% blockId=setMotorW block="Servo Waist degree:-90<=>90 %degree"
-    //% degree.min=-90 degree.max=90
-    export function ServoW(degree: number): void {
-        radio.sendString("m" + "0" + degree)
+    //% blockId=setMotorR block="Motor Right speed:-90<=>90 %speed"
+    //% speed.min=-90 speed.max=90
+    export function MotorR(speed: number): void {
+        if(speed > 0)
+            radio.sendString("r" + "0" + "0" + convertToText( speed))
+        else
+            radio.sendString("r" + "0" + "1" + convertToText(-speed))
     }
 
     //% subcategory="Motor"
-    //% blockId=setMotorFR block="Servo Front Right degree:-90<=>90 %degree"
-    //% degree.min=-90 degree.max=90
-    export function ServoFR(degree: number): void {
-        radio.sendString("m" + "1" + convertToText(degree))
-    }
-
-    //% subcategory="Motor"
-    //% blockId=setMotorFL block="Servo Front Left degree:-90<=>90 %degree"
-    //% degree.min=-90 degree.max=90
-    export function ServoFL(degree: number): void {
-        radio.sendString("m" + "2" + degree)
-    }
-
-    //% subcategory="Motor"
-    //% blockId=setMotorRR block="Servo Rear Right degree:-90<=>90 %degree"
-    //% degree.min=-90 degree.max=90
-    export function ServoRR(degree: number): void {
-        radio.sendString("m" + "3" + degree)
-    }
-
-    //% subcategory="Motor"
-    //% blockId=setMotorRL block="Servo Rear Left degree:-90<=>90 %degree"
-    //% degree.min=-90 degree.max=90
-    export function ServoRL(degree: number): void {
-        radio.sendString("m" + "4" + degree)
+    //% blockId=setMotorL block="Motor Left speed:-90<=>90 %speed"
+    //% speed.min=-90 speed.max=90
+    export function MotorL(speed: number): void {
+        if(speed > 0)
+            radio.sendString("r" + "1" + "0" + convertToText( speed))
+        else
+            radio.sendString("r" + "1" + "1" + convertToText(-speed))
     }
 
 
-
-    //% subcategory="LED"
-    //% blockId=setLEDred block="LED red Voltage:0<=>100 %v"
-    //% v.min=0 v.max=100
-    export function LEDred(v: number): void {
-        radio.sendString("l" + "0" + v)
-    }
-
-    //% subcategory="LED"
-    //% blockId=setLEDgreen block="LED green Voltage:0<=>100 %v"
-    //% v.min=0 v.max=100
-    export function LEDgreen(v: number): void {
-        radio.sendString("l" + "1" + v)
-    }
 
     //% subcategory="LED"
     //% blockId=setLEDblue block="LED blue Voltage:0<=>100 %v"
     //% v.min=0 v.max=100
     export function LEDblue(v: number): void {
-        radio.sendString("l" + "2" + v)
+        radio.sendString("b" + convertToText(v))
     }
 
 
