@@ -1,6 +1,6 @@
 # Insect
 
-Extension for DRV8830 Motor control ,Use with Micro:bit
+Extension for Servo Motor control ,Use with Micro:bit
 
 ## License
 
@@ -12,5 +12,5 @@ Extension for DRV8830 Motor control ,Use with Micro:bit
 (The metadata above is needed for package search.)
 
 ```package
-Insect=github.com/araragoo/QTechCagPad
+Insect=github.com/araragoo/QTechCarPad
 ```
