@@ -91,7 +91,7 @@ namespace Car {
     //% subcategory="Move"
     //% blockId=setRgtBwd block="RgtBwd speed:0<=>90 %speed"
     //% speed.min=0 speed.max=90 speed.defl=0
-    export function BgtFwd(speed: number): void {
+    export function RgtFwd(speed: number): void {
         radio.sendString("r" + "0" + "0" + convertToText(speed / 2))
         radio.sendString("r" + "1" + "1" + convertToText(speed))
     }
