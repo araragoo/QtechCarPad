@@ -44,6 +44,36 @@ namespace Car {
 
 
 
+    //% subcategory="Motor"
+    //% blockId=setMotorR block="Motor Right speed:-90<=>90 %speed"
+    //% speed.min=-90 speed.max=90
+    export function MotorR(speed: number): void {
+        if(speed > 0)
+            radio.sendString("r" + "0" + "0" + convertToText( speed))
+        else
+            radio.sendString("r" + "0" + "1" + convertToText(Math.abs(speed)))
+    }
+
+    //% subcategory="Motor"
+    //% blockId=setMotorL block="Motor Left speed:-90<=>90 %speed"
+    //% speed.min=-90 speed.max=90
+    export function MotorL(speed: number): void {
+        if(speed > 0)
+            radio.sendString("r" + "1" + "0" + convertToText(speed))
+        else
+            radio.sendString("r" + "1" + "1" + convertToText(Math.abs(speed)))
+    }
+
+
+
+    //% subcategory="LED"
+    //% blockId=setLEDblue block="LED blue Voltage:0<=>100 %v"
+    //% v.min=0 v.max=100
+    export function LEDblue(v: number): void {
+        radio.sendString("b" + convertToText(v))
+    }
+
+
 
     //% subcategory="Switch"
     //% blockId=swDistance block="Distance(cm)"
