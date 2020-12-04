@@ -88,15 +88,27 @@ namespace Car {
         radio.sendString("r" + "1" + "1" + convertToText(speed))
     }
 
+
+
+
+
+
+
     //% subcategory="Move"
-    //% blockId=setRgtBwd block="RgtBwd speed:0<=>90 %speed"
+    //% blockId=setBwd block="Bwd speed:0<=>90 %speed"
     //% speed.min=0 speed.max=90 speed.defl=0
-    export function RgtFwd(speed: number): void {
-        radio.sendString("r" + "0" + "0" + convertToText(speed / 2))
+    export function Bwd(speed: number): void {
+        radio.sendString("r" + "0" + "0" + convertToText(speed))
         radio.sendString("r" + "1" + "1" + convertToText(speed))
     }
 
-
+    //% subcategory="Move"
+    //% blockId=setLftBwd block="LftBwd speed:0<=>90 %speed"
+    //% speed.min=0 speed.max=90 speed.defl=0
+    export function LftBwd(speed: number): void {
+        radio.sendString("r" + "0" + "0" + convertToText(speed))
+        radio.sendString("r" + "1" + "1" + convertToText(speed / 2))
+    }
 
 
 
