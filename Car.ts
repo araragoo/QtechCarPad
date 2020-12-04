@@ -65,6 +65,29 @@ namespace Car {
         radio.sendString("r" + "1" + "0" + convertToText(speed / 2))
     }
 
+    //% subcategory="Move"
+    //% blockId=setRgt block="Rgt speed:0<=>90 %speed"
+    //% speed.min=0 speed.max=90 speed.defl=0
+    export function Rgt(speed: number): void {
+        radio.sendString("r" + "0" + "0" + convertToText(speed))
+        radio.sendString("r" + "1" + "0" + convertToText(speed))
+    }
+
+    //% subcategory="Move"
+    //% blockId=setStp block="Stp"
+    export function Stp(): void {
+        radio.sendString("r" + "0" + "0" + "0" )
+        radio.sendString("r" + "1" + "0" + "0" )
+    }
+
+    //% subcategory="Move"
+    //% blockId=setLft block="Lft speed:0<=>90 %speed"
+    //% speed.min=0 speed.max=90 speed.defl=0
+    export function Lft(speed: number): void {
+        radio.sendString("r" + "0" + "1" + convertToText(speed))
+        radio.sendString("r" + "1" + "1" + convertToText(speed))
+    }
+
 
 
 
