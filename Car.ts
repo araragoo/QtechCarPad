@@ -54,6 +54,7 @@ namespace Car {
     //% speed.min=0 speed.max=90 speed.defl=0
     export function Fwd(speed: number): void {
         radio.sendString("r" + "0" + "1" + "10")
+        basic.showString("r" + "0" + "1" + "10")
 //        radio.sendString("r" + "0" + "1" + convertToText(speed))
 //        radio.sendString("r" + "1" + "0" + convertToText(speed))
     }
