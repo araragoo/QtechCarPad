@@ -88,7 +88,6 @@ namespace Car {
         radio.sendString("r" + "1" + "1" + convertToText(speed))
     }
 
-
     //% subcategory="Move"
     //% blockId=setRgtBwd block="RgtBwd speed:0<=>90 %speed"
     //% speed.min=0 speed.max=90 speed.defl=0
